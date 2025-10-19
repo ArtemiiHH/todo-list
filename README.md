@@ -1,7 +1,11 @@
 # todo-list
 
-# Features (TO DO):
+# List what my Todo app should do:
 
-# Sidebar
-# Todo-items: Title, Desc, Due Date, Priority
-# Should have Projects
+# Add/edit/delete todos
+# Mark todos as complete
+# Group todos into projects
+# Persist data in localStorage
+# Add title + desc
+# Chose dates
+# Set priority levels (low, mid, high)
