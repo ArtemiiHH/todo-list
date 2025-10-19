@@ -4,7 +4,8 @@ export function createTodo(
   description,
   dueDate,
   priority,
-  completed = false
+  completed = false,
+  id = crypto.randomUUID()
 ) {
-  return { title, description, dueDate, priority, completed };
+  return { title, description, dueDate, priority, completed, id };
 }
