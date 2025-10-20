@@ -2,7 +2,8 @@
 import { createProject } from "./project";
 import { createTodo } from "./todo";
 
-export function initialize() {
+// Initialize function
+export function init() {
   
   // Create Default project
   return function defaultProject() {
