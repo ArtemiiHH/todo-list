@@ -8,16 +8,22 @@ let activeProject;
 // Initialize function
 export function init() {
   // Load project from storage
-  Storage.loadProjects();
   let projects = Storage.loadProjects();
 
-  // If projects dont exist, load default
+  // Check for empty or missing data
   if (!projects || projects.length === 0) {
+    // Make sure projects is an array
+    projects = [];
     
     // Create Default project
     let defaultProject = createProject("Inbox");
     projects.push(defaultProject);
     activeProject = projects[0];
-    Storage.loadProjects();
+
+    // Save back to Storage
+    Storage.saveProjects(projects);
   }
+
+  // Set active project for first project
+  activeProject = projects[0];
 }
