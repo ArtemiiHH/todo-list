@@ -1,4 +1,5 @@
 // DOM handler
+import { container } from "webpack";
 import { init } from "./controller";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
@@ -6,12 +7,33 @@ import { createTodo } from "./todo";
 // Render functions group
 const Renderer = {
   renderProjects(projects, activeProjectId) {
-
+    clearProjects();
+    for (let project in projects) {
+      const element = document.createElement('div');
+      if project.id === activeProjectId;
+      sidebar.append(element);
+    }
   },
 
-  renderTodos(todos) {},
+  renderTodos(todos) {
+    clearTodos();
+    if (todos.length === 0) {
+      renderEmpty();
+    } else {
+      for (let todo in todos) {
+        const element = document.createElement('div');
+        container.append(element);
+      }
+    }
+  },
 
-  renderEmpty() {},
+  renderEmpty() {
+    console.log("No tasks yet...");
+  },
+
+  if (project = []) {
+    renderEmpty();
+  }
 };
 
 // Bind functions group
@@ -39,7 +61,7 @@ const helperFunctions = {
 
   createElement() {},
 
-  formatDate() {}
+  formatDate() {},
 };
 
 export { Renderer, Binder };
