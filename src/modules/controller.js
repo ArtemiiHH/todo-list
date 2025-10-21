@@ -2,6 +2,7 @@
 import { createProject } from "./project";
 import { createTodo } from "./todo";
 import { Storage } from "./storage";
+import { Renderer, Binder } from "./dom";
 
 let activeProject;
 
