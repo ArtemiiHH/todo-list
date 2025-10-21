@@ -5,7 +5,9 @@ import { createTodo } from "./todo";
 
 // Render functions group
 const Renderer = {
-  renderProjects(projects, activeProjectId) {},
+  renderProjects(projects, activeProjectId) {
+
+  },
 
   renderTodos(todos) {},
 
@@ -27,6 +29,17 @@ const Binder = {
   bindAddProject(handler) {},
 
   bindDeleteProject(handler) {},
+};
+
+// Extra helper functions
+const helperFunctions = {
+  clearTodos() {},
+
+  clearProjects() {},
+
+  createElement() {},
+
+  formatDate() {}
 };
 
 export { Renderer, Binder };
