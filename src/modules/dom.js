@@ -9,9 +9,10 @@ const Renderer = {
   renderProjects(projects, activeProjectId) {
     clearProjects();
     for (let project in projects) {
-      const element = document.createElement('div');
-      if project.id === activeProjectId;
-      sidebar.append(element);
+      const element = document.createElement("div");
+      if (project.id === activeProjectId) {
+        sidebar.append(element);
+      }
     }
   },
 
@@ -21,7 +22,7 @@ const Renderer = {
       renderEmpty();
     } else {
       for (let todo in todos) {
-        const element = document.createElement('div');
+        const element = document.createElement("div");
         container.append(element);
       }
     }
@@ -31,9 +32,9 @@ const Renderer = {
     console.log("No tasks yet...");
   },
 
-  if (project = []) {
+  if(project = []) {
     renderEmpty();
-  }
+  },
 };
 
 // Bind functions group
