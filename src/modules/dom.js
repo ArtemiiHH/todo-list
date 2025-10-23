@@ -4,6 +4,9 @@ import { init } from "./controller";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
 
+const sidebar = document.querySelector('#sidebar');
+const container = document.querySelector('#container');
+
 // Render functions group
 const Renderer = {
   renderProjects(projects, activeProjectId) {
