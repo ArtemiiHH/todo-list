@@ -4,8 +4,7 @@ import { createProject } from "./project";
 import { createTodo } from "./todo";
 
 const sidebar = document.getElementById('sidebar');
-const container = document.getElementById('container');
-document.body.append(sidebar, container);
+const container = document.getElementById('content');
 
 // Render functions group
 const Renderer = {
