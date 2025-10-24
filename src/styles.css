@@ -3,6 +3,8 @@
 
 :root {
   --color-bg: white;
+  --color-sidebar: black;
+  --color-sidebar-div: rgb(41, 41, 41);
   --color-btn: orange;
   --border: solid 3px grey;
   --box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;;
@@ -21,10 +23,16 @@ body {
 }
 
 #sidebar {
-  background-color: blue;
+  background-color: var(--color-sidebar);
+  color: white;
   height: 100vh;
 }
 
 #content {
-  background-color: red;
+  background-color: var(--color-bg);
+}
+
+button {
+  background-color: var(--color-btn);
+  border: none;
 }
