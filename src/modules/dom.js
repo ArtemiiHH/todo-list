@@ -4,7 +4,9 @@ import { createProject } from "./project";
 import { createTodo } from "./todo";
 
 const sidebar = document.getElementById('sidebar');
-const container = document.getElementById('content');
+const content = document.getElementById('content');
+const addProjectBtn = document.querySelector('.add-project-btn');
+const addTodoBtn = document.querySelector('.add-todo-btn');
 
 // Render functions group
 const Renderer = {
@@ -25,7 +27,7 @@ const Renderer = {
     } else {
       for (let todo of todos) {
         const element = document.createElement("div");
-        container.append(element);
+        content.append(element);
       }
     }
   },
