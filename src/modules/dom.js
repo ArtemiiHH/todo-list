@@ -55,9 +55,13 @@ const Binder = {
 
 // Extra helper functions
 const helperFunctions = {
-  clearTodos() {},
+  clearTodos() {
+    container.innerHTML = '';
+  },
 
-  clearProjects() {},
+  clearProjects() {
+    sidebar.innerHTML = '';
+  },
 
   createElement() {},
 
