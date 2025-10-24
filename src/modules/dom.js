@@ -39,7 +39,11 @@ const Renderer = {
 
 // Bind functions group
 const Binder = {
-  bindAddTodo(handler) {},
+  bindAddTodo(handler) {
+    addTodoBtn.addEventListener(() => {
+      renderTodos();
+    });
+  },
 
   bindEditTodo(handler) {},
 
@@ -49,7 +53,11 @@ const Binder = {
 
   bindSwitchProject(handler) {},
 
-  bindAddProject(handler) {},
+  bindAddProject(handler) {
+    addProjectBtn.addEventListener(() => {
+      renderProjects();
+    });
+  },
 
   bindDeleteProject(handler) {},
 };
