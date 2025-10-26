@@ -43,6 +43,8 @@ export function init() {
 
   function handleSwitchProject() {}
 
+  function handleDeleteProject() {}
+
   // Render the initial UI
   // Render Sidebar
   Renderer.renderProjects(projects, activeProject);
