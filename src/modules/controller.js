@@ -4,6 +4,7 @@ import { createTodo } from "./todo";
 import { Storage } from "./storage";
 import { Renderer, Binder } from "./dom";
 
+let projects = [];
 let activeProject;
 
 const Hanlders = {
@@ -28,7 +29,7 @@ const Hanlders = {
 // Initialize function
 export function init() {
   // Load project from storage
-  let projects = Storage.loadProjects();
+  projects = Storage.loadProjects();
 
   // Check for empty or missing data
   if (!projects || projects.length === 0) {
