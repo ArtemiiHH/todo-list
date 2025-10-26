@@ -24,11 +24,16 @@ const Renderer = {
   renderTodos(todos) {
     clearTodos();
     if (todos.length === 0) {
-      renderEmpty();
+      Renderer.renderEmpty();
     } else {
       for (let todo of todos) {
-        const element = document.createElement("div");
-        content.append(element);
+        const todoBox = document.createElement("div");
+        const title = document.createElement('h5');
+        title.textContent = 'Title';
+        const description = document.createElement('p');
+        description.textContent = 'Dummy text';
+        content.appendChild(todoBox);
+        todoBox.append(title, description);
       }
     }
   },
@@ -41,6 +46,7 @@ const Renderer = {
 // Bind functions group
 const Binder = {
   bindAddTodo(handler) {
+    // Add task button handler
     addTodoBtn.addEventListener('click', handler);
   },
 
