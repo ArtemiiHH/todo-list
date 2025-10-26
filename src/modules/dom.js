@@ -33,7 +33,7 @@ const Renderer = {
   },
 
   renderEmpty() {
-    content.innerHTML = '';
+    content.innerHTML = "";
   },
 };
 
@@ -47,9 +47,9 @@ const Binder = {
 
   bindToggleTodo(handler) {},
 
-  bindSwitchProject(handler) {},
-
   bindAddProject(handler) {},
+
+  bindSwitchProject(handler) {},
 
   bindDeleteProject(handler) {},
 };
