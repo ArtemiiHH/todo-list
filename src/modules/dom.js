@@ -3,10 +3,10 @@ import { init } from "./controller";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
 
-const sidebar = document.getElementById('sidebar');
-const content = document.getElementById('content');
-const addProjectBtn = document.querySelector('.add-project-btn');
-const addTodoBtn = document.querySelector('.add-todo-btn');
+const sidebar = document.getElementById("sidebar");
+const content = document.getElementById("content");
+const addProjectBtn = document.querySelector(".add-project-btn");
+const addTodoBtn = document.querySelector(".add-todo-btn");
 
 // Render functions group
 const Renderer = {
@@ -33,17 +33,13 @@ const Renderer = {
   },
 
   renderEmpty() {
-    console.log("No tasks yet...");
-  }
+    content.innerHTML = '';
+  },
 };
 
 // Bind functions group
 const Binder = {
-  bindAddTodo(handler) {
-    addTodoBtn.addEventListener(() => {
-      renderTodos();
-    });
-  },
+  bindAddTodo(handler) {},
 
   bindEditTodo(handler) {},
 
@@ -53,11 +49,7 @@ const Binder = {
 
   bindSwitchProject(handler) {},
 
-  bindAddProject(handler) {
-    addProjectBtn.addEventListener(() => {
-      renderProjects();
-    });
-  },
+  bindAddProject(handler) {},
 
   bindDeleteProject(handler) {},
 };
@@ -65,11 +57,11 @@ const Binder = {
 // Extra helper functions
 const helperFunctions = {
   clearTodos() {
-    container.innerHTML = '';
+    container.innerHTML = "";
   },
 
   clearProjects() {
-    sidebar.innerHTML = '';
+    sidebar.innerHTML = "";
   },
 
   createElement() {},
