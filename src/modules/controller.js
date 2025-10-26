@@ -3,7 +3,6 @@ import { createProject } from "./project";
 import { createTodo } from "./todo";
 import { Storage } from "./storage";
 import { Renderer, Binder } from "./dom";
-import { act } from "react";
 
 let activeProject;
 
@@ -29,7 +28,21 @@ export function init() {
   // Set active project for first project
   activeProject = projects[0];
 
+  function handleAddTodo() {
+    createTodo();
+    activeProject.addTodo();
+    Storage.saveProjects();
+    Renderer.renderTodos();
+  }
+
+  function handleAddProject() {}
+
   // Render the initial UI
+  // Render Sidebar
   Renderer.renderProjects(projects, activeProject);
+  // Render Todos in Content
   Renderer.renderTodos(activeProject.getTodos());
+
+  Binder.bindAddTodo(handleAddTodo);
+  Binder.bindAddProject(handleAddProject);
 }
