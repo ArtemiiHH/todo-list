@@ -3,6 +3,7 @@ import { createProject } from "./project";
 import { createTodo } from "./todo";
 import { Storage } from "./storage";
 import { Renderer, Binder } from "./dom";
+import { act } from "react";
 
 let activeProject;
 
@@ -15,7 +16,7 @@ export function init() {
   if (!projects || projects.length === 0) {
     // Make sure projects is an array
     projects = [];
-    
+
     // Create Default project
     let defaultProject = createProject("Inbox");
     projects.push(defaultProject);
@@ -27,4 +28,8 @@ export function init() {
 
   // Set active project for first project
   activeProject = projects[0];
+
+  // Render the initial UI
+  Renderer.renderProjects(projects, activeProject);
+  Renderer.renderTodos(activeProject.getTodos());
 }
