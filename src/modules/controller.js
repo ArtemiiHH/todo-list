@@ -10,10 +10,14 @@ let activeProject;
 // Handlers Object
 const Handlers = {
   handleAddTodo() {
-    createTodo();
-    activeProject.addTodo();
-    Storage.saveProjects();
-    Renderer.renderTodos();
+    // Create todo
+    const newTodo = createTodo();
+    // Add todo to active project
+    activeProject.addTodo(newTodo);
+    // Save projects
+    Storage.saveProjects(projects);
+    // Re-render
+    Renderer.renderTodos(activeProject.getTodos());
   },
 
   handleEditTodo() {},
@@ -59,3 +63,5 @@ export function init() {
   Binder.bindAddTodo(Handlers.handleAddTodo);
   Binder.bindAddProject(Handlers.handleAddProject);
 }
+
+export { Handlers };
