@@ -57,8 +57,6 @@ const Binder = {
   bindDeleteProject(handler) {},
 };
 
-Binder.bindAddTodo(Handlers.handleAddTodo);
-
 // Extra helper functions
 const helperFunctions = {
   clearTodos() {
