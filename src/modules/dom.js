@@ -2,6 +2,7 @@
 import { init } from "./controller";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
+import { Handlers } from "./controller";
 
 const sidebar = document.getElementById("sidebar");
 const content = document.getElementById("content");
@@ -39,7 +40,9 @@ const Renderer = {
 
 // Bind functions group
 const Binder = {
-  bindAddTodo(handler) {},
+  bindAddTodo(handler) {
+    addTodoBtn.addEventListener('click', handler);
+  },
 
   bindEditTodo(handler) {},
 
@@ -53,6 +56,8 @@ const Binder = {
 
   bindDeleteProject(handler) {},
 };
+
+Binder.bindAddTodo(Handlers.handleAddTodo);
 
 // Extra helper functions
 const helperFunctions = {
