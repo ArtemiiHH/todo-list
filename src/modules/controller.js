@@ -7,6 +7,7 @@ import { Renderer, Binder } from "./dom";
 let projects = [];
 let activeProject;
 
+// Handlers Object
 const Hanlders = {
   handleAddTodo() {
     createTodo();
@@ -54,6 +55,7 @@ export function init() {
   // Render Todos in Content
   Renderer.renderTodos(activeProject.getTodos());
 
-  Binder.bindAddTodo(handleAddTodo);
-  Binder.bindAddProject(handleAddProject);
+  // Connect Binder to Hanlders
+  Binder.bindAddTodo(Hanlders.handleAddTodo);
+  Binder.bindAddProject(Hanlders.handleAddProject);
 }
