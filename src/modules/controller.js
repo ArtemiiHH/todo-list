@@ -6,6 +6,25 @@ import { Renderer, Binder } from "./dom";
 
 let activeProject;
 
+const Hanlders = {
+  handleAddTodo() {
+    createTodo();
+    activeProject.addTodo();
+    Storage.saveProjects();
+    Renderer.renderTodos();
+  },
+
+  handleEditTodo() {},
+
+  handleDeleteTodo() {},
+
+  handleAddProject() {},
+
+  handleSwitchProject() {},
+
+  handleDeleteProject() {},
+};
+
 // Initialize function
 export function init() {
   // Load project from storage
@@ -27,23 +46,6 @@ export function init() {
 
   // Set active project for first project
   activeProject = projects[0];
-
-  function handleAddTodo() {
-    createTodo();
-    activeProject.addTodo();
-    Storage.saveProjects();
-    Renderer.renderTodos();
-  }
-
-  function handleEditTodo() {}
-
-  function handleDeleteTodo() {}
-
-  function handleAddProject() {}
-
-  function handleSwitchProject() {}
-
-  function handleDeleteProject() {}
 
   // Render the initial UI
   // Render Sidebar
