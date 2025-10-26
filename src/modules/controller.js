@@ -35,7 +35,13 @@ export function init() {
     Renderer.renderTodos();
   }
 
+  function handleEditTodo() {}
+
+  function handleDeleteTodo() {}
+
   function handleAddProject() {}
+
+  function handleSwitchProject() {}
 
   // Render the initial UI
   // Render Sidebar
