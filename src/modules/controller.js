@@ -8,7 +8,7 @@ let projects = [];
 let activeProject;
 
 // Handlers Object
-const Hanlders = {
+const Handlers = {
   handleAddTodo() {
     createTodo();
     activeProject.addTodo();
@@ -56,6 +56,6 @@ export function init() {
   Renderer.renderTodos(activeProject.getTodos());
 
   // Connect Binder to Hanlders
-  Binder.bindAddTodo(Hanlders.handleAddTodo);
-  Binder.bindAddProject(Hanlders.handleAddProject);
+  Binder.bindAddTodo(Handlers.handleAddTodo);
+  Binder.bindAddProject(Handlers.handleAddProject);
 }
