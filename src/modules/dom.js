@@ -1,18 +1,30 @@
 // DOM handler
-import { init } from "./controller";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
-import { Handlers } from "./controller";
 
 const sidebar = document.getElementById("sidebar");
 const content = document.getElementById("content");
 const addProjectBtn = document.querySelector(".add-project-btn");
-const addTodoBtn = document.querySelector(".add-todo-btn");
+
+// Extra helper functions
+const helperFunctions = {
+  clearTodos() {
+    content.innerHTML = "";
+  },
+
+  clearProjects() {
+    sidebar.innerHTML = "";
+  },
+
+  createElement() {},
+
+  formatDate() {},
+};
 
 // Render functions group
 const Renderer = {
   renderProjects(projects, activeProjectId) {
-    clearProjects();
+    helperFunctions.clearProjects();
     for (let project of projects) {
       const element = document.createElement("div");
       if (project.id === activeProjectId) {
@@ -22,18 +34,21 @@ const Renderer = {
   },
 
   renderTodos(todos) {
-    clearTodos();
+    helperFunctions.clearTodos();
     if (todos.length === 0) {
       Renderer.renderEmpty();
     } else {
       for (let todo of todos) {
         const todoBox = document.createElement("div");
-        const title = document.createElement('h5');
-        title.textContent = 'Title';
-        const description = document.createElement('p');
-        description.textContent = 'Dummy text';
-        content.appendChild(todoBox);
+
+        const title = document.createElement("h5");
+        title.textContent = todo.title || "Untitled";
+
+        const description = document.createElement("p");
+        description.textContent = todo.description || "No description";
+
         todoBox.append(title, description);
+        content.appendChild(todoBox);
       }
     }
   },
@@ -46,8 +61,13 @@ const Renderer = {
 // Bind functions group
 const Binder = {
   bindAddTodo(handler) {
-    // Add task button handler
-    addTodoBtn.addEventListener('click', handler);
+    console.log("Binder: trying to attach to addTodoBtn", addTodoBtn);
+    const addTodoBtn = document.querySelector(".add-todo-btn");
+
+    addTodoBtn.addEventListener("click", () => {
+      console.log("Binder: addTodoBtn clicked!");
+      handler();
+    });
   },
 
   bindEditTodo(handler) {},
@@ -61,21 +81,6 @@ const Binder = {
   bindSwitchProject(handler) {},
 
   bindDeleteProject(handler) {},
-};
-
-// Extra helper functions
-const helperFunctions = {
-  clearTodos() {
-    container.innerHTML = "";
-  },
-
-  clearProjects() {
-    sidebar.innerHTML = "";
-  },
-
-  createElement() {},
-
-  formatDate() {},
 };
 
 export { Renderer, Binder };
