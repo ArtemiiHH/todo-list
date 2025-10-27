@@ -2,4 +2,7 @@
 import "./styles.css";
 import { init } from "./modules/controller";
 
-init();
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded — starting app");
+  init();
+});
