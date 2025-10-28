@@ -38,6 +38,8 @@ const Binder = {
   bindAddTodo(handler) {
     addTodoBtn.addEventListener("click", handler);
   },
+
+  bindAddProject(handler) {},
 };
 
 export { Renderer, Binder };
