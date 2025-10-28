@@ -25,7 +25,13 @@ const helperFunctions = {
 };
 
 // Render functions group
-const Renderer = {};
+const Renderer = {
+  renderProjects(projects, activeProjectId) {},
+
+  renderTodos(todos) {},
+
+  renderEmpty() {},
+};
 
 // Binder functions group
 const Binder = {
