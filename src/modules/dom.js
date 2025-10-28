@@ -9,6 +9,8 @@ const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
 const addProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
+const saveTodoBtn = document.querySelector('.save-btn');
+const cancelBtn = document.querySelector('.cancel-btn');
 
 // Extra helper functions
 const helperFunctions = {
