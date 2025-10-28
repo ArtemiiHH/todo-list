@@ -39,7 +39,13 @@ const Renderer = {
     }
   },
 
-  renderTodos(todos) {},
+  renderTodos(todos) {
+    helperFunctions.clearTodos();
+
+    if (todos.length === 0) {
+      Renderer.renderEmpty();
+    }
+  },
 
   renderEmpty() {},
 };
