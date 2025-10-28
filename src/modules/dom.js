@@ -44,6 +44,24 @@ const Renderer = {
 
     if (todos.length === 0) {
       Renderer.renderEmpty();
+    } else {
+      // Loop thru todos and create element
+      for (let todo of todos) {
+        // Create todos box
+        const todoBox = createElement('div');
+
+        // Create todos title
+        const title = createElement('h5');
+        title.textContent = todo.title || 'Untitled';
+
+        // Create todos description
+        const description = createElement('p');
+        description.textContent = todo.description || 'No description';
+
+        // Append the elements
+        todoBox.append(title, description);
+        todoList.appendChild(todoBox);
+      }
     }
   },
 
