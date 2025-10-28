@@ -48,9 +48,10 @@ const Renderer = {
       for (let todo of todos) {
         // Create todos box
         const todoBox = document.createElement("div");
+        todoBox.classList.add('todo-box');
 
         // Create todos title
-        const title = document.createElement("h5");
+        const title = document.createElement("h3");
         title.textContent = todo.title || "Untitled";
 
         // Create todos description
