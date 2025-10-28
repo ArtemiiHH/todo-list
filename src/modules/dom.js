@@ -65,7 +65,9 @@ const Renderer = {
     }
   },
 
-  renderEmpty() {},
+  renderEmpty() {
+    todoList.innerHTML = '<p>No todos yet</p>';
+  },
 };
 
 // Binder functions group
