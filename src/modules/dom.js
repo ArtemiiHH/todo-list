@@ -1,4 +1,5 @@
 // DOM handler
+import { createElement } from "react";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
 
@@ -29,7 +30,13 @@ const Renderer = {
   renderProjects(projects, activeProjectId) {
     helperFunctions.clearProjects();
 
-    for (let project of projects) {}
+    // Loop thru projects and create element
+    for (let project of projects) {
+      const projectBox = createElement('div');
+      if (project.id === activeProjectId) {
+        projectList.append(projectBox);
+      }
+    }
   },
 
   renderTodos(todos) {},
