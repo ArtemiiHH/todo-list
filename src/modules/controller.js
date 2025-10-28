@@ -10,6 +10,8 @@ const Handlers = {
       title: "Test task",
       description: "Test description...",
     };
+
+    Renderer.renderTodos([dummyTodo]);
   },
 
   handleAddProject() {
