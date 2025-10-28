@@ -24,8 +24,10 @@ const helperFunctions = {
   formatDate() {},
 };
 
+// Render functions group
 const Renderer = {};
 
+// Binder functions group
 const Binder = {
   bindAddTodo(handler) {
     addTodoBtn.addEventListener("click", handler);
