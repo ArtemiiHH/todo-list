@@ -74,7 +74,9 @@ const Renderer = {
 // Binder functions group
 const Binder = {
   bindAddTodo(handler) {
-    addTodoBtn.addEventListener("click", handler);
+    addTodoBtn.addEventListener("click", () => {
+      Modal.open();
+    });
   },
 
   bindAddProject(handler) {
