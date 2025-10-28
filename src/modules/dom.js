@@ -1,3 +1,7 @@
+// DOM handler
+import { createProject } from "./project";
+import { createTodo } from "./todo";
+
 const addTodoBtn = document.querySelector(".add-todo-btn");
 
 const Renderer = {};
