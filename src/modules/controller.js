@@ -1,17 +1,15 @@
 import { Renderer, Binder } from "./dom";
 import { Storage } from "./storage";
+import { createTodo } from "./todo";
 
 // Handler functions group
 const Handlers = {
   handleAddTodo() {
     console.log("Add todo clicked!");
 
-    const dummyTodo = {
-      title: "Test task",
-      description: "Test description...",
-    };
+    const newTodo = createTodo('Real task', 'Description...');
 
-    Renderer.renderTodos([dummyTodo]);
+    Renderer.renderTodos([newTodo]);
   },
 
   handleAddProject() {
