@@ -8,6 +8,9 @@ const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
 const addProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
+const modal = document.getElementById('modal');
+modal.style.display = 'none';
+
 
 // Extra helper functions
 const helperFunctions = {
