@@ -1,5 +1,4 @@
 // DOM handler
-import { createElement } from "react";
 import { createProject } from "./project";
 import { createTodo } from "./todo";
 
