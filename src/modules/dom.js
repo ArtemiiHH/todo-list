@@ -31,7 +31,7 @@ const Renderer = {
 
     // Loop thru projects and create element
     for (let project of projects) {
-      const projectBox = createElement('div');
+      const projectBox = createElement("div");
       if (project.id === activeProjectId) {
         projectList.append(projectBox);
       }
@@ -47,15 +47,15 @@ const Renderer = {
       // Loop thru todos and create element
       for (let todo of todos) {
         // Create todos box
-        const todoBox = createElement('div');
+        const todoBox = document.createElement("div");
 
         // Create todos title
-        const title = createElement('h5');
-        title.textContent = todo.title || 'Untitled';
+        const title = document.createElement("h5");
+        title.textContent = todo.title || "Untitled";
 
         // Create todos description
-        const description = createElement('p');
-        description.textContent = todo.description || 'No description';
+        const description = document.createElement("p");
+        description.textContent = todo.description || "No description";
 
         // Append the elements
         todoBox.append(title, description);
@@ -65,7 +65,7 @@ const Renderer = {
   },
 
   renderEmpty() {
-    todoList.innerHTML = '<p>No todos yet</p>';
+    todoList.innerHTML = "<p>No todos yet</p>";
   },
 };
 
@@ -76,7 +76,7 @@ const Binder = {
   },
 
   bindAddProject(handler) {
-    addProjectBtn.addEventListener('click', handler);
+    addProjectBtn.addEventListener("click", handler);
   },
 };
 
