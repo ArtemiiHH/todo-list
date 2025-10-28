@@ -7,6 +7,5 @@ const Handlers = {
 };
 
 export function init() {
-    console.log("Init called");
     Binder.bindAddTodo(Handlers.handleAddTodo);
 }
