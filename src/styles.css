@@ -36,3 +36,8 @@ button {
   background-color: var(--color-btn);
   border: none;
 }
+
+.todo-box {
+  background-color: blue;
+  width: 300px;
+}
