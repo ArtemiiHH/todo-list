@@ -26,7 +26,11 @@ const helperFunctions = {
 
 // Render functions group
 const Renderer = {
-  renderProjects(projects, activeProjectId) {},
+  renderProjects(projects, activeProjectId) {
+    helperFunctions.clearProjects();
+
+    for (let project of projects) {}
+  },
 
   renderTodos(todos) {},
 
