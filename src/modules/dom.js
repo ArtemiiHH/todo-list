@@ -1,6 +1,7 @@
 // DOM handler
 import { createProject } from "./project";
 import { createTodo } from "./todo";
+import { Modal } from "./modal";
 
 // Cache DOM elements once
 const sidebar = document.getElementById("sidebar");
