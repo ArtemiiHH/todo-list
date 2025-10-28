@@ -3,21 +3,26 @@ import { createProject } from "./project";
 import { createTodo } from "./todo";
 
 // Cache DOM elements once
-const sidebar = document.getElementById('sidebar');
-const todoList = document.querySelector('.todo-list');
-const addProjectBtn = document.querySelector('.add-project-btn');
+const sidebar = document.getElementById("sidebar");
+const todoList = document.querySelector(".todo-list");
+const projectList = document.querySelector(".project-list");
+const addProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
 
 // Extra helper functions
 const helperFunctions = {
-  clearTodos() {},
+  clearTodos() {
+    todoList.innerHTML = "";
+  },
 
-  clearProjects() {},
+  clearProjects() {
+    projectList.innerHTML = "";
+  },
 
   createElement() {},
 
   formatDate() {},
-}
+};
 
 const Renderer = {};
 
