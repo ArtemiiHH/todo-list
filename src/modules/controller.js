@@ -2,14 +2,20 @@ import { Renderer, Binder } from "./dom";
 import { Storage } from "./storage";
 import { createTodo } from "./todo";
 
+// Todos list
+let todos = [];
+
 // Handler functions group
 const Handlers = {
   handleAddTodo() {
     console.log("Add todo clicked!");
 
-    const newTodo = createTodo('Real task', 'Description...');
+    const newTodo = createTodo("Real task", "Description...");
 
-    Renderer.renderTodos([newTodo]);
+    todos.push(newTodo);
+    Renderer.renderTodos(todos);
+
+    // Storage.saveProjects(todos);
   },
 
   handleAddProject() {
