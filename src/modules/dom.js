@@ -8,6 +8,17 @@ const todoList = document.querySelector('.todo-list');
 const addProjectBtn = document.querySelector('.add-project-btn');
 const addTodoBtn = document.querySelector(".add-todo-btn");
 
+// Extra helper functions
+const helperFunctions = {
+  clearTodos() {},
+
+  clearProjects() {},
+
+  createElement() {},
+
+  formatDate() {},
+}
+
 const Renderer = {};
 
 const Binder = {
