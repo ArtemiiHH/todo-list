@@ -60,7 +60,7 @@ button {
   background-color: rgba(0, 0, 0, 0.7);
 
   /* Center modal */
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -72,4 +72,9 @@ button {
   height: 500px;
   width: 500px;
   background-color: white;
+}
+
+/* Open modal */
+#modal.open {
+  display: flex;
 }
