@@ -6,8 +6,15 @@ import { Modal } from "./modal";
 // Todos list
 let todos = [];
 
+// Assing inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
+
+// Clear input function
+function clearInputs() {
+  taskTitleInput.value = '';
+  taskDescInput.value = '';
+};
 
 // Handler functions group
 const Handlers = {
@@ -31,10 +38,7 @@ const Handlers = {
     Modal.close();
 
     // When Modal closes clear input
-    if (Modal.close) {
-      taskTitleInput.value = '';
-      taskDescInput.value = '';
-    }
+    clearInputs();
   },
 };
 
