@@ -58,7 +58,11 @@ const Handlers = {
     // }
 
     ProjectModal.open();
-  }
+  },
+
+  handleSaveProject() {},
+
+  handleCancelProject() {}
 };
 
 // Initialize function
