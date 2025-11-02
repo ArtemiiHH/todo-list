@@ -1,7 +1,6 @@
 // DOM handler
 import { createProject } from "./project";
 import { createTodo } from "./todo";
-import { Modal } from "./modal";
 
 // Cache DOM elements once
 const sidebar = document.getElementById("sidebar");
@@ -9,6 +8,7 @@ const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
 const addProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
+// Modal buttons
 const saveTodoBtn = document.querySelector(".save-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 
@@ -85,6 +85,7 @@ const Binder = {
 
   bindSaveTodo(handler) {
     saveTodoBtn.addEventListener("click", (e) => {
+      // Prevent default reload
       e.preventDefault();
       handler();
     });
