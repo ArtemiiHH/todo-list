@@ -29,6 +29,12 @@ const Handlers = {
     // Storage.saveProjects(todos);
 
     Modal.close();
+
+    // When Modal closes clear input
+    if (Modal.close) {
+      taskTitleInput.value = '';
+      taskDescInput.value = '';
+    }
   },
 };
 
