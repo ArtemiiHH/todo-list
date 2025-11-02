@@ -6,7 +6,7 @@ import { Modal } from "./modal";
 // Todos list
 let todos = [];
 
-// Assing inputs
+// Assign inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
 
@@ -40,6 +40,11 @@ const Handlers = {
     // When Modal closes clear input
     clearInputs();
   },
+
+  handleCancelTodo() {
+    Modal.close();
+    clearInputs();
+  }
 };
 
 // Initialize function
@@ -48,4 +53,5 @@ export function init() {
   Binder.bindAddTodo(Handlers.handleAddTodo);
   Binder.bindAddProject(Handlers.handleAddProject);
   Binder.bindSaveTodo(Handlers.handleSaveTodo);
+  Binder.bindCancelTodo(Handlers.handleCancelTodo);
 }
