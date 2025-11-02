@@ -93,9 +93,9 @@ const Binder = {
     newProjectBtn.addEventListener("click", handler);
   },
 
-  bindSaveProject() {},
+  bindSaveProject(handler) {},
 
-  bindCancelProject() {}
+  bindCancelProject(handler) {}
 };
 
 export { Renderer, Binder };

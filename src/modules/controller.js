@@ -21,7 +21,6 @@ function clearInputs() {
 
 // Handler functions group
 const Handlers = {
-
   // Handle Todos
   handleAddTodo() {
     console.log("Add todo clicked!");
@@ -62,14 +61,19 @@ const Handlers = {
 
   handleSaveProject() {},
 
-  handleCancelProject() {}
+  handleCancelProject() {},
 };
 
 // Initialize function
 export function init() {
   // Bind the handlers to Binders in DOM
+  // Bind Todos
   Binder.bindAddTodo(Handlers.handleAddTodo);
-  Binder.bindAddProject(Handlers.handleAddProject);
   Binder.bindSaveTodo(Handlers.handleSaveTodo);
   Binder.bindCancelTodo(Handlers.handleCancelTodo);
+
+  // Bind Projects
+  Binder.bindAddProject(Handlers.handleAddProject);
+  Binder.bindSaveProject(Handlers.handleSaveProject);
+  Binder.bindCancelProject(Handlers.handleCancelProject);
 }
