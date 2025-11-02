@@ -27,6 +27,11 @@ const Handlers = {
   handleAddProject() {
     let projects = [];
     let activeProject = null;
+
+    if (!projects || projects.length === 0) {
+      const defaultProjects = createProject('Inbox');
+      defaultProjects = activeProject;
+    }
   },
 
   handleSaveTodo() {

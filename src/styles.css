@@ -51,7 +51,7 @@ button {
 
 /* Modal */
 /* Modal background (Overlay) */
-#modal {
+#todo-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -75,6 +75,6 @@ button {
 }
 
 /* Open modal */
-#modal.open {
+#todo-modal.open {
   display: flex;
 }

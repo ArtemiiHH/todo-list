@@ -1,4 +1,4 @@
-const modal = document.querySelector("#modal");
+const modal = document.querySelector("#todo-modal");
 
 const Modal = {
   open() {
