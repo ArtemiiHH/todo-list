@@ -13,9 +13,9 @@ const taskDescInput = document.querySelector("#task-description-input");
 
 // Clear input function
 function clearInputs() {
-  taskTitleInput.value = '';
-  taskDescInput.value = '';
-};
+  taskTitleInput.value = "";
+  taskDescInput.value = "";
+}
 
 // Handler functions group
 const Handlers = {
@@ -25,7 +25,16 @@ const Handlers = {
   },
 
   handleAddProject() {
-    console.log("Add project clicked!");
+    let projects = [];
+    let activeProject = null;
+
+    // Loop thru projects and create element
+    for (let project of projects) {
+      const projectBox = createElement("div");
+      if (project.id === activeProjectId) {
+        projectList.append(projectBox);
+      }
+    }
   },
 
   handleSaveTodo() {
@@ -45,7 +54,7 @@ const Handlers = {
   handleCancelTodo() {
     Modal.close();
     clearInputs();
-  }
+  },
 };
 
 // Initialize function

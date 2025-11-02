@@ -30,15 +30,7 @@ const helperFunctions = {
 // Render functions group
 const Renderer = {
   renderProjects(projects, activeProjectId) {
-    helperFunctions.clearProjects();
-
-    // Loop thru projects and create element
-    for (let project of projects) {
-      const projectBox = createElement("div");
-      if (project.id === activeProjectId) {
-        projectList.append(projectBox);
-      }
-    }
+    
   },
 
   renderTodos(todos) {
@@ -93,6 +85,7 @@ const Binder = {
 
   bindCancelTodo(handler) {
     cancelBtn.addEventListener('click', (e) => {
+      // Prevent default reload
       e.preventDefault();
       handler();
     });
