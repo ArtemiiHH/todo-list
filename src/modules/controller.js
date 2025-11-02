@@ -10,31 +10,22 @@ let todos = [];
 // Assign inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
-const projectInput = document.querySelector('#project-name-input');
+const projectInput = document.querySelector("#project-name-input");
 
 // Clear input function
 function clearInputs() {
   taskTitleInput.value = "";
   taskDescInput.value = "";
+  projectInput.value = "";
 }
 
 // Handler functions group
 const Handlers = {
+
+  // Handle Todos
   handleAddTodo() {
     console.log("Add todo clicked!");
     TodoModal.open();
-  },
-
-  handleAddProject() {
-    // let projects = [];
-    // let activeProject = null;
-
-    // if (!projects || projects.length === 0) {
-    //   const defaultProjects = createProject("Inbox");
-    //   defaultProjects = activeProject;
-    // }
-
-    ProjectModal.open();
   },
 
   handleSaveTodo() {
@@ -55,6 +46,19 @@ const Handlers = {
     TodoModal.close();
     clearInputs();
   },
+
+  // Handle Projects
+  handleAddProject() {
+    // let projects = [];
+    // let activeProject = null;
+
+    // if (!projects || projects.length === 0) {
+    //   const defaultProjects = createProject("Inbox");
+    //   defaultProjects = activeProject;
+    // }
+
+    ProjectModal.open();
+  }
 };
 
 // Initialize function
