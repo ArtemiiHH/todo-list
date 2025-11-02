@@ -85,7 +85,12 @@ const Binder = {
     addProjectBtn.addEventListener("click", handler);
   },
 
-  bindSaveTodo(handler) {}
+  bindSaveTodo(handler) {
+    saveTodoBtn.addEventListener('click', () => {
+      Modal.close();
+      handler();
+    });
+  }
 };
 
 export { Renderer, Binder };
