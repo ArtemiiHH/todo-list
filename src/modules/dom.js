@@ -9,8 +9,8 @@ const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
 const addProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
-const saveTodoBtn = document.querySelector('.save-btn');
-const cancelBtn = document.querySelector('.cancel-btn');
+const saveTodoBtn = document.querySelector(".save-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
 
 // Extra helper functions
 const helperFunctions = {
@@ -76,9 +76,7 @@ const Renderer = {
 // Binder functions group
 const Binder = {
   bindAddTodo(handler) {
-    addTodoBtn.addEventListener("click", () => {
-      Modal.open();
-    });
+    addTodoBtn.addEventListener("click", handler);
   },
 
   bindAddProject(handler) {
@@ -86,11 +84,8 @@ const Binder = {
   },
 
   bindSaveTodo(handler) {
-    saveTodoBtn.addEventListener('click', () => {
-      Modal.close();
-      handler();
-    });
-  }
+    saveTodoBtn.addEventListener("click", handler);
+  },
 };
 
 export { Renderer, Binder };
