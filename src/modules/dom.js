@@ -84,6 +84,8 @@ const Binder = {
   bindAddProject(handler) {
     addProjectBtn.addEventListener("click", handler);
   },
+
+  bindSaveTodo(handler) {}
 };
 
 export { Renderer, Binder };
