@@ -1,31 +1,35 @@
 import { Renderer, Binder } from "./dom";
 import { Storage } from "./storage";
 import { createTodo } from "./todo";
+import { Modal } from "./modal";
 
 // Todos list
 let todos = [];
 
-const taskTitleInput = document.querySelector('#task-title-input');
-const taskDescInput = document.querySelector('#task-description-input');
+const taskTitleInput = document.querySelector("#task-title-input");
+const taskDescInput = document.querySelector("#task-description-input");
 
 // Handler functions group
 const Handlers = {
   handleAddTodo() {
     console.log("Add todo clicked!");
-
-    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
-
-    todos.push(newTodo);
-    Renderer.renderTodos(todos);
-
-    // Storage.saveProjects(todos);
+    Modal.open();
   },
 
   handleAddProject() {
     console.log("Add project clicked!");
   },
 
-  handleSaveTodo() {}
+  handleSaveTodo() {
+    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
+
+    todos.push(newTodo);
+    Renderer.renderTodos(todos);
+
+    // Storage.saveProjects(todos);
+
+    Modal.close();
+  },
 };
 
 // Initialize function
