@@ -1,13 +1,24 @@
-const modal = document.querySelector("#todo-modal");
+const todoModal = document.querySelector("#todo-modal");
+const projectModal = document.querySelector("#project-modal");
 
-const Modal = {
+const TodoModal = {
   open() {
-    modal.classList.add("open");
+    todoModal.classList.add("open");
   },
 
   close() {
-    modal.classList.remove("open");
+    todoModal.classList.remove("open");
   },
 };
 
-export { Modal };
+const ProjectModal = {
+  open() {
+    projectModal.classList.add("open");
+  },
+
+  close() {
+    projectModal.classList.remove("open");
+  },
+};
+
+export { TodoModal, ProjectModal };
