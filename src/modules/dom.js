@@ -84,7 +84,10 @@ const Binder = {
   },
 
   bindSaveTodo(handler) {
-    saveTodoBtn.addEventListener("click", handler);
+    saveTodoBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      handler();
+    });
   },
 };
 
