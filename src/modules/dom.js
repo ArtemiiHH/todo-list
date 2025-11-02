@@ -84,6 +84,10 @@ const Binder = {
   bindAddProject(handler) {
     addProjectBtn.addEventListener("click", handler);
   },
+
+  bindModalOpen() {},
+
+  bindModalClose() {}
 };
 
 export { Renderer, Binder };
