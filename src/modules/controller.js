@@ -5,6 +5,9 @@ import { createTodo } from "./todo";
 // Todos list
 let todos = [];
 
+const taskTitleInput = document.querySelector('#task-title-input');
+const taskDescInput = document.querySelector('#task-description-input');
+
 // Handler functions group
 const Handlers = {
   handleAddTodo() {
