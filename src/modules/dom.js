@@ -90,6 +90,10 @@ const Binder = {
       handler();
     });
   },
+
+  bindCancelTodo(handler) {
+    cancelBtn.addEventListener('click', handler);
+  }
 };
 
 export { Renderer, Binder };
