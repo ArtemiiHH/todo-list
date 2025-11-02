@@ -6,11 +6,13 @@ import { createTodo } from "./todo";
 const sidebar = document.getElementById("sidebar");
 const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
-const addProjectBtn = document.querySelector(".add-project-btn");
+const newProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
 // Modal buttons
 const saveTodoBtn = document.querySelector(".save-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
+const addProjectBtn = document.querySelector(".add-project-btn");
+const cancelProjectBtn = document.querySelector(".cancel-project-btn");
 
 // Extra helper functions
 const helperFunctions = {
@@ -72,7 +74,7 @@ const Binder = {
   },
 
   bindAddProject(handler) {
-    addProjectBtn.addEventListener("click", handler);
+    newProjectBtn.addEventListener("click", handler);
   },
 
   bindSaveTodo(handler) {
