@@ -50,13 +50,6 @@ const Handlers = {
 
 // Initialize function
 export function init() {
-
-  let projects = [];
-
-  if (!projects || projects === 0) {
-    const defaultProject = createProject('Inbox');
-  }
-
   // Bind the handlers to Binders in DOM
   Binder.bindAddTodo(Handlers.handleAddTodo);
   Binder.bindAddProject(Handlers.handleAddProject);
