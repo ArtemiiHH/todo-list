@@ -2,6 +2,7 @@ import { Renderer, Binder } from "./dom";
 import { Storage } from "./storage";
 import { createTodo } from "./todo";
 import { Modal } from "./modal";
+import { createProject } from "./project";
 
 // Todos list
 let todos = [];
@@ -49,6 +50,13 @@ const Handlers = {
 
 // Initialize function
 export function init() {
+
+  let projects = [];
+
+  if (!projects || projects === 0) {
+    const defaultProject = createProject('Inbox');
+  }
+
   // Bind the handlers to Binders in DOM
   Binder.bindAddTodo(Handlers.handleAddTodo);
   Binder.bindAddProject(Handlers.handleAddProject);
