@@ -92,7 +92,10 @@ const Binder = {
   },
 
   bindCancelTodo(handler) {
-    cancelBtn.addEventListener('click', handler);
+    cancelBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      handler();
+    });
   }
 };
 
