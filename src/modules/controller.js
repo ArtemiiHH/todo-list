@@ -61,7 +61,10 @@ const Handlers = {
 
   handleSaveProject() {},
 
-  handleCancelProject() {},
+  handleCancelProject() {
+    ProjectModal.close();
+    clearInputs();
+  },
 };
 
 // Initialize function
