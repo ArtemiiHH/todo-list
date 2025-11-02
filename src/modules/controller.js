@@ -27,14 +27,6 @@ const Handlers = {
   handleAddProject() {
     let projects = [];
     let activeProject = null;
-
-    // Loop thru projects and create element
-    for (let project of projects) {
-      const projectBox = createElement("div");
-      if (project.id === activeProjectId) {
-        projectList.append(projectBox);
-      }
-    }
   },
 
   handleSaveTodo() {
