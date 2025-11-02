@@ -1,7 +1,7 @@
 import { Renderer, Binder } from "./dom";
 import { Storage } from "./storage";
 import { createTodo } from "./todo";
-import { Modal } from "./modal";
+import { TodoModal, ProjectModal } from "./modal";
 import { createProject } from "./project";
 
 // Todos list
@@ -10,6 +10,7 @@ let todos = [];
 // Assign inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
+const projectInput = document.querySelector('#project-name-input');
 
 // Clear input function
 function clearInputs() {
@@ -21,17 +22,19 @@ function clearInputs() {
 const Handlers = {
   handleAddTodo() {
     console.log("Add todo clicked!");
-    Modal.open();
+    TodoModal.open();
   },
 
   handleAddProject() {
-    let projects = [];
-    let activeProject = null;
+    // let projects = [];
+    // let activeProject = null;
 
-    if (!projects || projects.length === 0) {
-      const defaultProjects = createProject('Inbox');
-      defaultProjects = activeProject;
-    }
+    // if (!projects || projects.length === 0) {
+    //   const defaultProjects = createProject("Inbox");
+    //   defaultProjects = activeProject;
+    // }
+
+    ProjectModal.open();
   },
 
   handleSaveTodo() {
@@ -42,14 +45,14 @@ const Handlers = {
 
     // Storage.saveProjects(todos);
 
-    Modal.close();
+    TodoModal.close();
 
     // When Modal closes clear input
     clearInputs();
   },
 
   handleCancelTodo() {
-    Modal.close();
+    TodoModal.close();
     clearInputs();
   },
 };

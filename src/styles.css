@@ -49,7 +49,7 @@ button {
   width: 300px;
 }
 
-/* Modal */
+/* Todo Modal */
 /* Modal background (Overlay) */
 #todo-modal {
   position: fixed;
@@ -76,5 +76,35 @@ button {
 
 /* Open modal */
 #todo-modal.open {
+  display: flex;
+}
+
+/* Project Modal */
+/* Modal background (Overlay) */
+#project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  /* Center modal */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal box */
+.project-modal-form {
+  display: flex;
+  flex-direction: column;
+  height:100px;
+  width: 200px;
+  background-color: white;
+}
+
+/* Open modal */
+#project-modal.open {
   display: flex;
 }

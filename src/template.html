@@ -25,19 +25,29 @@
 
     <!-- Todo Modal -->
     <div id="todo-modal">
-      
       <!-- Modal box -->
       <form class="modal-form">
         <label for="task-title-input">Title</label>
-        <input type="text"
-        id="task-title-input"
-        placeholder="Task name" />
+        <input type="text" id="task-title-input" placeholder="Task name" />
 
         <label for="task-description-input">Description</label>
-        <input type="text" id="task-description-input"
-        placeholder="Description"/>
+        <input
+          type="text"
+          id="task-description-input"
+          placeholder="Description"
+        />
         <button class="save-btn">Save</button>
         <button class="cancel-btn">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="project-modal">
+      <form class="project-modal-form">
+        <label for="project-name-input">New Project Name</label>
+        <input type="text" id="project-name-input" placeholder="Name" />
+        <button class="add-project-btn">Save</button>
+        <button class="cancel-project-btn">Cancel</button>
       </form>
     </div>
   </body>
