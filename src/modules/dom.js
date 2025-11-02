@@ -31,9 +31,7 @@ const helperFunctions = {
 
 // Render functions group
 const Renderer = {
-  renderProjects(projects, activeProjectId) {
-    
-  },
+  renderProjects(projects, activeProjectId) {},
 
   renderTodos(todos) {
     helperFunctions.clearTodos();
@@ -69,12 +67,9 @@ const Renderer = {
 
 // Binder functions group
 const Binder = {
+  // Bind Todos
   bindAddTodo(handler) {
     addTodoBtn.addEventListener("click", handler);
-  },
-
-  bindAddProject(handler) {
-    newProjectBtn.addEventListener("click", handler);
   },
 
   bindSaveTodo(handler) {
@@ -86,12 +81,21 @@ const Binder = {
   },
 
   bindCancelTodo(handler) {
-    cancelBtn.addEventListener('click', (e) => {
+    cancelBtn.addEventListener("click", (e) => {
       // Prevent default reload
       e.preventDefault();
       handler();
     });
-  }
+  },
+
+  // Bind Projects
+  bindAddProject(handler) {
+    newProjectBtn.addEventListener("click", handler);
+  },
+
+  bindSaveProject() {},
+
+  bindCancelProject() {}
 };
 
 export { Renderer, Binder };
