@@ -54,7 +54,9 @@ const Handlers = {
     ProjectModal.open();
   },
 
-  handleSaveProject() {},
+  handleSaveProject() {
+    ProjectModal.close();
+  },
 
   handleCancelProject() {
     ProjectModal.close();
@@ -64,9 +66,11 @@ const Handlers = {
 
 // Initialize function
 export function init() {
-  const defaultProject = createProject('Inbox');
-  projects.push(defaultProject);
-  activeProject = defaultProject;
+  if (!projects || projects.length === 0) {
+    const defaultProject = createProject("Inbox");
+    projects.push(defaultProject);
+    activeProject = defaultProject;
+  }
 
   Renderer.renderProjects(projects, activeProject.id);
 
