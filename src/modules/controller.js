@@ -16,10 +16,8 @@ const taskDescInput = document.querySelector("#task-description-input");
 const projectInput = document.querySelector("#project-name-input");
 
 // Clear input function
-function clearInputs() {
-  taskTitleInput.value = "";
-  taskDescInput.value = "";
-  projectInput.value = "";
+function clearInputs(...inputs) {
+  inputs.forEach((input) => input.value = '');
 }
 
 // Handler functions group
@@ -41,12 +39,12 @@ const Handlers = {
     TodoModal.close();
 
     // When Modal closes clear input
-    clearInputs();
+    clearInputs(taskTitleInput, taskDescInput);
   },
 
   handleCancelTodo() {
     TodoModal.close();
-    clearInputs();
+    clearInputs(taskTitleInput, taskDescInput);
   },
 
   // Handle Projects
@@ -62,7 +60,7 @@ const Handlers = {
 
   handleCancelProject() {
     ProjectModal.close();
-    clearInputs();
+    clearInputs(projectInput);
   },
 };
 
