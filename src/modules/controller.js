@@ -4,6 +4,8 @@ import { createTodo } from "./todo";
 import { TodoModal, ProjectModal } from "./modal";
 import { createProject } from "./project";
 
+const projectList = document.querySelector(".project-list");
+
 // Todos list
 let todos = [];
 // Projects
@@ -57,17 +59,7 @@ const Handlers = {
     projects.push(newProject);
     activeProject = newProject;
 
-    // Loop thru projects and create element
-    for (let project of projects) {
-      const projectBox = document.createElement('div');
-      projectBox.classList.add('project-box');
-
-      const projectTitle = document.createElement('h3');
-      projectTitle.classList.add('project-title');
-    }
-
     Renderer.renderProjects(projects, activeProject.id);
-    Renderer.renderTodos();
 
     ProjectModal.close();
 
