@@ -7,6 +7,10 @@ import { createProject } from "./project";
 // Todos list
 let todos = [];
 
+// Projects
+let projects = [];
+let activeProject = null;
+
 // Assign inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
@@ -50,16 +54,16 @@ const Handlers = {
   handleAddProject() {
     ProjectModal.open();
 
-    let projects = [];
-    let activeProject = null;
-
     if (!projects || projects.length === 0) {
       let defaultProjects = createProject("Inbox");
       defaultProjects = activeProject;
       projects.push(defaultProjects);
+    } else {
+      const newProject = createProject(projectInput.value);
+      projects.push(newProject);
     }
 
-    Renderer.renderProjects(projects, activeProject);
+    Renderer.renderProjects(projects, activeProject.id);
   },
 
   handleSaveProject() {},
