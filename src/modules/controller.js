@@ -68,6 +68,8 @@ export function init() {
   projects.push(defaultProject);
   activeProject = defaultProject;
 
+  Renderer.renderProjects(projects, activeProject.id);
+
   // Bind the handlers to Binders in DOM
   // Bind Todos
   Binder.bindAddTodo(Handlers.handleAddTodo);
