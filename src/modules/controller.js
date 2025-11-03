@@ -48,15 +48,18 @@ const Handlers = {
 
   // Handle Projects
   handleAddProject() {
-    // let projects = [];
-    // let activeProject = null;
-
-    // if (!projects || projects.length === 0) {
-    //   const defaultProjects = createProject("Inbox");
-    //   defaultProjects = activeProject;
-    // }
-
     ProjectModal.open();
+
+    let projects = [];
+    let activeProject = null;
+
+    if (!projects || projects.length === 0) {
+      let defaultProjects = createProject("Inbox");
+      defaultProjects = activeProject;
+      projects.push(defaultProjects);
+    }
+
+    Renderer.renderProjects(projects, activeProject);
   },
 
   handleSaveProject() {},
