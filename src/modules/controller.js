@@ -55,6 +55,8 @@ const Handlers = {
   },
 
   handleSaveProject() {
+    const newProject = createProject(projectInput.value);
+
     ProjectModal.close();
   },
 
