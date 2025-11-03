@@ -54,9 +54,17 @@ const Handlers = {
 
   handleSaveProject() {
     const newProject = createProject(projectInput.value);
-
     projects.push(newProject);
     activeProject = newProject;
+
+    // Loop thru projects and create element
+    for (let project of projects) {
+      const projectBox = document.createElement('div');
+      projectBox.classList.add('project-box');
+
+      const projectTitle = document.createElement('h3');
+      projectTitle.classList.add('project-title');
+    }
 
     Renderer.renderProjects(projects, activeProject.id);
     Renderer.renderTodos();
