@@ -90,22 +90,25 @@ const Binder = {
 
   // Bind Projects
   bindAddProject(handler) {
-    newProjectBtn.addEventListener("click", handler);
+    newProjectBtn.addEventListener("click", () => {
+      console.log("Works");
+      handler();
+    });
   },
 
   bindSaveProject(handler) {
-    addProjectBtn.addEventListener('click', (e) => {
+    addProjectBtn.addEventListener("click", (e) => {
       e.preventDefault();
       handler();
     });
   },
 
   bindCancelProject(handler) {
-    cancelProjectBtn.addEventListener('click', (e) => {
+    cancelProjectBtn.addEventListener("click", (e) => {
       e.preventDefault();
       handler();
     });
-  }
+  },
 };
 
 export { Renderer, Binder };
