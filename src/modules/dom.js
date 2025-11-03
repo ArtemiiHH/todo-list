@@ -93,7 +93,12 @@ const Binder = {
     newProjectBtn.addEventListener("click", handler);
   },
 
-  bindSaveProject(handler) {},
+  bindSaveProject(handler) {
+    addProjectBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      handler();
+    });
+  },
 
   bindCancelProject(handler) {
     cancelProjectBtn.addEventListener('click', (e) => {
