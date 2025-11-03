@@ -55,9 +55,14 @@ const Handlers = {
   handleSaveProject() {
     const newProject = createProject(projectInput.value);
 
+    projects.push(newProject);
+    activeProject = newProject;
+
     Renderer.renderProjects(projects, activeProject.id);
 
     ProjectModal.close();
+
+    clearInputs(projectInput);
   },
 
   handleCancelProject() {
