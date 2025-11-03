@@ -59,6 +59,7 @@ const Handlers = {
     activeProject = newProject;
 
     Renderer.renderProjects(projects, activeProject.id);
+    Renderer.renderTodos();
 
     ProjectModal.close();
 
