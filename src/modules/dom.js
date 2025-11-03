@@ -95,7 +95,12 @@ const Binder = {
 
   bindSaveProject(handler) {},
 
-  bindCancelProject(handler) {}
+  bindCancelProject(handler) {
+    cancelProjectBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      handler();
+    });
+  }
 };
 
 export { Renderer, Binder };
