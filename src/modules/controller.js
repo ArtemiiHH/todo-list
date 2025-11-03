@@ -6,7 +6,6 @@ import { createProject } from "./project";
 
 // Todos list
 let todos = [];
-
 // Projects
 let projects = [];
 let activeProject = null;
@@ -53,17 +52,6 @@ const Handlers = {
   // Handle Projects
   handleAddProject() {
     ProjectModal.open();
-
-    if (!projects || projects.length === 0) {
-      let defaultProjects = createProject("Inbox");
-      defaultProjects = activeProject;
-      projects.push(defaultProjects);
-    } else {
-      const newProject = createProject(projectInput.value);
-      projects.push(newProject);
-    }
-
-    Renderer.renderProjects(projects, activeProject.id);
   },
 
   handleSaveProject() {},
@@ -76,6 +64,10 @@ const Handlers = {
 
 // Initialize function
 export function init() {
+  const defaultProject = createProject('Inbox');
+  projects.push(defaultProject);
+  activeProject = defaultProject;
+
   // Bind the handlers to Binders in DOM
   // Bind Todos
   Binder.bindAddTodo(Handlers.handleAddTodo);
