@@ -39,6 +39,10 @@ const Renderer = {
       // Create projects title
       const projectTitle = document.createElement("h3");
       projectTitle.classList.add("project-title");
+
+      // Append the elements
+      projectBox.append(projectTitle);
+      projectList.appendChild(projectBox);
     }
   },
 
