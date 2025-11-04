@@ -39,10 +39,6 @@ const Renderer = {
       // Create projects title
       const projectTitle = document.createElement("h3");
       projectTitle.classList.add("project-title");
-
-      // Append the elements
-      projectBox.append(projectTitle);
-      projectList.appendChild(projectBox);
     }
   },
 
@@ -59,15 +55,15 @@ const Renderer = {
         todoBox.classList.add("todo-box");
 
         // Create todos title
-        const todoTitle = document.createElement("h3");
-        todoTitle.textContent = todo.todoTitle || "Untitled";
+        const title = document.createElement("h3");
+        title.textContent = todo.title || "Untitled";
 
         // Create todos description
-        const todoDescription = document.createElement("p");
-        todoDescription.textContent = todo.todoDescription || "No description";
+        const description = document.createElement("p");
+        description.textContent = todo.description || "No description";
 
         // Append the elements
-        todoBox.append(todoTitle, todoDescription);
+        todoBox.append(title, description);
         todoList.appendChild(todoBox);
       }
     }
