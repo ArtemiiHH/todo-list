@@ -58,11 +58,12 @@ const Handlers = {
     projects.push(newProject);
     activeProject = newProject;
 
+    Storage.saveProjects(projects);
+
     Renderer.renderProjects(projects, activeProject.id);
-    Renderer.renderTodos(activeProject.todos);
+    Renderer.renderTodos(activeProject.getTodos());
 
     ProjectModal.close();
-
     clearInputs(projectInput);
   },
 
