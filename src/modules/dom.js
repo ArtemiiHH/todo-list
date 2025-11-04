@@ -37,8 +37,12 @@ const Renderer = {
       projectBox.classList.add("project-box");
 
       // Create projects title
-      const projectTitle = document.createElement("h3");
-      projectTitle.classList.add("project-title");
+      const title = document.createElement("h3");
+      title.classList.add("project-title");
+
+      // Append elements
+      projectBox.append(title);
+      projectList.appendChild(projectBox);
     }
   },
 
@@ -62,7 +66,7 @@ const Renderer = {
         const description = document.createElement("p");
         description.textContent = todo.description || "No description";
 
-        // Append the elements
+        // Append elements
         todoBox.append(title, description);
         todoList.appendChild(todoBox);
       }
