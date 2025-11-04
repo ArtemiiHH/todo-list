@@ -33,13 +33,11 @@ const Handlers = {
     const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
 
     activeProject.todos.push(newTodo);
-    Renderer.renderTodos(activeProject.todos);
+    Renderer.renderTodos(activeProject.getTodos());
 
-    // Storage.saveProjects(todos);
+    Storage.saveProjects(projects);
 
     TodoModal.close();
-
-    // When Modal closes clear input
     clearInputs(taskTitleInput, taskDescInput);
   },
 
