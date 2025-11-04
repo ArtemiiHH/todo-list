@@ -6,8 +6,6 @@ import { createProject } from "./project";
 
 const projectList = document.querySelector(".project-list");
 
-// Todos list
-let todos = [];
 // Projects
 let projects = [];
 let activeProject = null;
@@ -33,7 +31,7 @@ const Handlers = {
   handleSaveTodo() {
     const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
 
-    todos.push(newTodo);
+    activeProject.todos.push(newTodo);
     Renderer.renderTodos(todos);
 
     // Storage.saveProjects(todos);
