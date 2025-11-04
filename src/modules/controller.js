@@ -5,10 +5,18 @@ import { TodoModal, ProjectModal } from "./modal";
 import { createProject } from "./project";
 
 // Projects
-let projects = Storage.loadProjects();
-let activeProject = projects[0] || createProject('Inbox');
+// Load projects from storage
+let projects = Storage.loadProjects().map(p => 
+  createProject(p.title, p.id)
+);
 
-if (projects.length === 0) projects.push(activeProject);
+// If no projects, create default
+if (projects.length === 0) {
+  const defaultProject = createProject("Inbox");
+  projects.push(defaultProject);
+}
+
+let activeProject = projects[0];
 
 const projectList = document.querySelector(".project-list");
 // Assign inputs
@@ -32,7 +40,7 @@ const Handlers = {
   handleSaveTodo() {
     const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
 
-    activeProject.todos.push(newTodo);
+    activeProject.addTodo(newTodo);
     Renderer.renderTodos(activeProject.getTodos());
 
     Storage.saveProjects(projects);
