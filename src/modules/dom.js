@@ -29,16 +29,19 @@ const helperFunctions = {
 
 // Render functions group
 const Renderer = {
-  renderProjects(projects, activeProject) {
+  renderProjects(projects, activeProjectId) {
+    helperFunctions.clearProjects();
+
     // Loop thru projects and create element
     for (let project of projects) {
       // Create projects box
       const projectBox = document.createElement("div");
       projectBox.classList.add("project-box");
+      if (project.id === activeProjectId) projectBox.classList.add('active');
 
       // Create projects title
       const title = document.createElement("h3");
-      title.classList.add("project-title");
+      title.textContent = project.title;
 
       // Append elements
       projectBox.append(title);
