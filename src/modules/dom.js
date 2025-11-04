@@ -55,15 +55,15 @@ const Renderer = {
         todoBox.classList.add("todo-box");
 
         // Create todos title
-        const title = document.createElement("h3");
-        title.textContent = todo.title || "Untitled";
+        const todoTitle = document.createElement("h3");
+        todoTitle.textContent = todo.todoTitle || "Untitled";
 
         // Create todos description
-        const description = document.createElement("p");
-        description.textContent = todo.description || "No description";
+        const todoDescription = document.createElement("p");
+        todoDescription.textContent = todo.todoDescription || "No description";
 
         // Append the elements
-        todoBox.append(title, description);
+        todoBox.append(todoTitle, todoDescription);
         todoList.appendChild(todoBox);
       }
     }
