@@ -30,9 +30,18 @@ const helperFunctions = {
 // Render functions group
 const Renderer = {
   renderProjects(projects, activeProject) {
-    for (let project of projects) {}
+    // Loop thru projects and create element
+    for (let project of projects) {
+      // Create projects box
+      const projectBox = document.createElement("div");
+      projectBox.classList.add("project-box");
+
+      // Create projects title
+      const projectTitle = document.createElement("h3");
+      projectTitle.classList.add("project-title");
+    }
   },
-  
+
   renderTodos(todos) {
     helperFunctions.clearTodos();
 
