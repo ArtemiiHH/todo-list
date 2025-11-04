@@ -4,12 +4,12 @@
 const sidebar = document.getElementById("sidebar");
 const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
-const newProjectBtn = document.querySelector(".add-project-btn");
 const addTodoBtn = document.querySelector(".add-todo-btn");
 // Modal buttons
 const saveTodoBtn = document.querySelector(".save-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
-const addProjectBtn = document.querySelector(".add-project-btn");
+const addNewProjectBtn = document.querySelector(".add-new-project-btn");
+const saveProjectBtn = document.querySelector(".save-project-btn");
 const cancelProjectBtn = document.querySelector(".cancel-project-btn");
 
 // Extra helper functions
@@ -106,14 +106,11 @@ const Binder = {
 
   // Bind Projects
   bindAddProject(handler) {
-    newProjectBtn.addEventListener("click", () => {
-      console.log("Works");
-      handler();
-    });
+    addNewProjectBtn.addEventListener("click", handler);
   },
 
   bindSaveProject(handler) {
-    addProjectBtn.addEventListener("click", (e) => {
+    saveProjectBtn.addEventListener("click", (e) => {
       e.preventDefault();
       handler();
     });
