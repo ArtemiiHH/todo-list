@@ -1,6 +1,4 @@
 // Group of TODOs
-import { createTodo } from "./todo";
-
 export function createProject(title, id = crypto.randomUUID()) {
   const todos = [];
 
