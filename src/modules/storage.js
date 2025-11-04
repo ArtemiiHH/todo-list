@@ -1,6 +1,6 @@
 // Storage handler
 export const Storage = {
-  saveProjects() {
+  saveProjects(projects) {
     localStorage.setItem("projects", JSON.stringify(projects));
   },
 
