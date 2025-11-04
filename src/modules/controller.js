@@ -4,12 +4,13 @@ import { createTodo } from "./todo";
 import { TodoModal, ProjectModal } from "./modal";
 import { createProject } from "./project";
 
-const projectList = document.querySelector(".project-list");
-
 // Projects
-let projects = [];
-let activeProject = null;
+let projects = Storage.loadProjects();
+let activeProject = projects[0] || createProject('Inbox');
 
+if (projects.length === 0) projects.push(activeProject);
+
+const projectList = document.querySelector(".project-list");
 // Assign inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
@@ -32,7 +33,7 @@ const Handlers = {
     const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
 
     activeProject.todos.push(newTodo);
-    Renderer.renderTodos(todos);
+    Renderer.renderTodos(activeProject.todos);
 
     // Storage.saveProjects(todos);
 
@@ -58,6 +59,7 @@ const Handlers = {
     activeProject = newProject;
 
     Renderer.renderProjects(projects, activeProject.id);
+    Renderer.renderTodos(activeProject.todos);
 
     ProjectModal.close();
 
