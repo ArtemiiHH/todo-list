@@ -56,12 +56,17 @@ body {
 /* Add Todo button */
 .add-todo-btn {
   background-color: white;
-  border: var(--border);
+  /* border: var(--border); */
   font-size: 1.2rem;
   padding: 20px;
-  height: 70px;
+  height: auto;
   width: 100%;
   text-align: start;
+}
+
+.add-todo-btn:hover {
+  background-color: rgb(225, 225, 225);
+  border-radius: 10px;
 }
 
 /* Title text */
@@ -82,11 +87,16 @@ button:hover {
 /* Each todo elements box */
 .todo-box {
   background-color: white;
-  border: var(--border);
+  /* border: var(--border); */
   padding: 20px;
   height: auto;
   width: auto;
   margin-bottom: 10px;
+}
+
+.todo-box:hover {
+  background-color: rgb(225, 225, 225);
+  border-radius: 10px;
 }
 
 .todo-box h3,
