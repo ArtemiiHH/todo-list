@@ -41,6 +41,7 @@ body {
   gap: 20px;
 }
 
+/* Add + button */
 .add-new-project-btn {
   height: 40px;
   width: 40px;
@@ -56,8 +57,11 @@ body {
 .add-todo-btn {
   background-color: white;
   border: var(--border);
+  font-size: 1.2rem;
+  padding: 20px;
   height: 70px;
   width: 100%;
+  text-align: start;
 }
 
 /* Title text */
@@ -77,8 +81,17 @@ button:hover {
 
 /* Each todo elements box */
 .todo-box {
-  background-color: blue;
-  width: 300px;
+  background-color: white;
+  border: var(--border);
+  padding: 20px;
+  height: auto;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.todo-box h3,
+.todo-box p {
+  margin: 0;
 }
 
 /* Each projects elements box */
