@@ -34,6 +34,12 @@ body {
   padding: 30px;
 }
 
+/* Content (Right side) */
+#content {
+  background-color: var(--color-bg);
+  padding: 30px;
+}
+
 /* My project bar */
 .my-project-bar {
   display: flex;
@@ -45,12 +51,6 @@ body {
 .add-new-project-btn {
   height: 40px;
   width: 40px;
-}
-
-/* Content (Right side) */
-#content {
-  background-color: var(--color-bg);
-  padding: 30px;
 }
 
 /* Add Todo button */
@@ -69,20 +69,20 @@ body {
   border-radius: 10px;
 }
 
-/* Title text */
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
 button {
   background-color: var(--color-btn);
   border: none;
 }
 
-button:hover {
-  /* opacity: 0.7; */
+/* button:hover {
+  opacity: 0.7;
+} */
+
+/* Title text */
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
 /* Each todo elements box */
