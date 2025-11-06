@@ -34,10 +34,21 @@ body {
   padding: 30px;
 }
 
+/* My project bar */
+.my-project-bar {
+  display: flex;
+  gap: 20px;
+}
+
 /* Content (Right side) */
 #content {
   background-color: var(--color-bg);
   padding: 30px;
+}
+
+/* Title text */
+h2 {
+  margin: 0;
 }
 
 button {
