@@ -37,7 +37,13 @@ body {
 /* My project bar */
 .my-project-bar {
   display: flex;
+  align-items: center;
   gap: 20px;
+}
+
+.add-new-project-btn {
+  height: 40px;
+  width: 40px;
 }
 
 /* Content (Right side) */
@@ -54,6 +60,10 @@ h2 {
 button {
   background-color: var(--color-btn);
   border: none;
+}
+
+button:hover {
+  opacity: 0.7;
 }
 
 /* Each todo elements box */
@@ -112,7 +122,7 @@ button {
 .project-modal-form {
   display: flex;
   flex-direction: column;
-  height:100px;
+  height: 100px;
   width: 200px;
   background-color: white;
 }
