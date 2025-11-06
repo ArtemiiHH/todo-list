@@ -72,6 +72,13 @@ button:hover {
   width: 300px;
 }
 
+/* Each projects elements box */
+.project-box {
+  background-color: gray;
+  height: 40px;
+  width: auto;
+}
+
 /* Todo Modal */
 /* Modal background (Overlay) */
 #todo-modal {
