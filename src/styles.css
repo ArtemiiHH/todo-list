@@ -31,11 +31,13 @@ body {
   background-color: var(--color-sidebar);
   color: white;
   height: 100vh;
+  padding: 30px;
 }
 
 /* Content (Right side) */
 #content {
   background-color: var(--color-bg);
+  padding: 30px;
 }
 
 button {
