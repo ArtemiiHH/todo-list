@@ -71,7 +71,8 @@ body {
 
 /* Title text */
 h1,
-h2 {
+h2,
+h3 {
   margin: 0;
 }
 
@@ -107,8 +108,17 @@ button:hover {
 /* Each projects elements box */
 .project-box {
   background-color: gray;
-  height: 40px;
+  /* border: var(--border); */
+  border-radius: 10px;
+  padding: 20px;
+  height: auto;
   width: auto;
+  margin-bottom: 10px;
+}
+
+.project-box:hover {
+  opacity: 0.8;
+  border-radius: 10px;
 }
 
 /* Todo Modal */
