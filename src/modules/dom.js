@@ -113,6 +113,8 @@ const Binder = {
     });
   },
 
+  bindDeleteTodo(handler) {},
+
   // Bind Projects
   bindAddProject(handler) {
     addNewProjectBtn.addEventListener("click", handler);
