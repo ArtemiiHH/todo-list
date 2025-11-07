@@ -6,9 +6,7 @@ import { createProject } from "./project";
 
 // Projects
 // Load projects from storage
-let projects = Storage.loadProjects().map(p => 
-  createProject(p.title, p.id)
-);
+let projects = Storage.loadProjects().map((p) => createProject(p.title, p.id));
 
 // If no projects, create default
 if (projects.length === 0) {
@@ -54,6 +52,8 @@ const Handlers = {
     clearInputs(taskTitleInput, taskDescInput);
   },
 
+  handleDeleteTodo() {},
+
   // Handle Projects
   handleAddProject() {
     ProjectModal.open();
@@ -77,6 +77,8 @@ const Handlers = {
     ProjectModal.close();
     clearInputs(projectInput);
   },
+
+  handleDeleteProject() {}
 };
 
 // Initialize function
