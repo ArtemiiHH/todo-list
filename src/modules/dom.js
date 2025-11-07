@@ -44,7 +44,7 @@ const Renderer = {
 
       // Create delete button
       const deleteBtn = document.createElement("button");
-      deleteBtn.classList.add("delete-btn");
+      deleteBtn.classList.add("delete-project-btn");
       deleteBtn.dataset.id = project.id;
       deleteBtn.innerHTML = "🗑";
 
@@ -74,12 +74,12 @@ const Renderer = {
 
         // Create delete button
         const deleteBtn = document.createElement("button");
-        deleteBtn.classList.add("delete-btn");
+        deleteBtn.classList.add("delete-todo-btn");
         deleteBtn.dataset.id = todos.id;
         deleteBtn.innerHTML = "🗑";
 
         // Append elements
-        todoBox.append(title, description);
+        todoBox.append(title, description, deleteBtn);
         todoList.appendChild(todoBox);
       }
     }
