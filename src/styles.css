@@ -69,6 +69,18 @@ body {
   border-radius: 10px;
 }
 
+/* Trash button */
+.delete-btn {
+  background-color: gray;
+  font-size: 1.5rem;
+  height: 40px;
+  width: 40px;
+}
+
+.delete-btn:hover {
+  background-color: rgb(109, 109, 109);
+}
+
 button {
   background-color: var(--color-btn);
   border: none;
