@@ -37,16 +37,16 @@ const Renderer = {
       // Create projects box
       const projectBox = document.createElement("div");
       projectBox.classList.add("project-box");
-      if (project.id === activeProjectId) projectBox.classList.add('active');
+      if (project.id === activeProjectId) projectBox.classList.add("active");
       // Create projects title
       const title = document.createElement("h3");
       title.textContent = project.title;
 
       // Create delete button
-      const deleteBtn = document.createElement('button');
-      deleteBtn.classList.add('delete-btn');
+      const deleteBtn = document.createElement("button");
+      deleteBtn.classList.add("delete-btn");
       deleteBtn.dataset.id = project.id;
-      deleteBtn.innerHTML = '🗑';
+      deleteBtn.innerHTML = "🗑";
 
       // Append elements
       projectBox.append(title, deleteBtn);
@@ -65,14 +65,18 @@ const Renderer = {
         // Create todos box
         const todoBox = document.createElement("div");
         todoBox.classList.add("todo-box");
-
         // Create todos title
         const title = document.createElement("h3");
         title.textContent = todo.title || "Untitled";
-
         // Create todos description
         const description = document.createElement("p");
         description.textContent = todo.description || "No description";
+
+        // Create delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.dataset.id = todos.id;
+        deleteBtn.innerHTML = "🗑";
 
         // Append elements
         todoBox.append(title, description);
