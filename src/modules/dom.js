@@ -45,6 +45,7 @@ const Renderer = {
       // Create delete button
       const deleteBtn = document.createElement('button');
       deleteBtn.classList.add('delete-btn');
+      deleteBtn.dataset.id = project.id;
       deleteBtn.innerHTML = '🗑';
 
       // Append elements
