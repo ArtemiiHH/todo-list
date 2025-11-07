@@ -38,13 +38,17 @@ const Renderer = {
       const projectBox = document.createElement("div");
       projectBox.classList.add("project-box");
       if (project.id === activeProjectId) projectBox.classList.add('active');
-
       // Create projects title
       const title = document.createElement("h3");
       title.textContent = project.title;
 
+      // Create delete button
+      const deleteBtn = document.createElement('button');
+      deleteBtn.classList.add('delete-btn');
+      deleteBtn.innerHTML = '🗑';
+
       // Append elements
-      projectBox.append(title);
+      projectBox.append(title, deleteBtn);
       projectList.appendChild(projectBox);
     }
   },
