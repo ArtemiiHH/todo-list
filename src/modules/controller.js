@@ -83,13 +83,12 @@ const Handlers = {
   },
 
   handleDeleteProject(id) {
-    const index = projects.findIndex(p => p.id === id);
+    const index = projects.findIndex((p) => p.id === id);
     const removedProject = projects.splice(index, 1);
-    if (removedProject[0].id === activeProject.id) {
+    if (projects.length === 0) {
+      activeProject = createProject("Inbox");
+    } else if ((removedProject[0].id === activeProject.id)) {
       activeProject = projects[0];
-    } else if (projects.length === 0) {
-      activeProject = createProject('Inbox');
-      projects.push(activeProject);
     }
     Storage.saveProjects(projects);
     Renderer.renderProjects(projects, activeProject.id);
