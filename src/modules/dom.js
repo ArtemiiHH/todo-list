@@ -114,14 +114,16 @@ const Binder = {
   },
 
   bindDeleteTodo(handler) {
-    todoList.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('delete-todo-btn')) return;
+    todoList.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("delete-todo-btn")) return;
       const todoId = e.target.dataset.id;
       handler(todoId);
     });
   },
 
-  bindClickProject(handler) {},
+  bindClickProject(handler) {
+    projectList.addEventListener("click", (e) => {});
+  },
 
   // Bind Projects
   bindAddProject(handler) {
@@ -143,12 +145,12 @@ const Binder = {
   },
 
   bindDeleteProject(handler) {
-    projectList.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('delete-project-btn')) return;
+    projectList.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("delete-project-btn")) return;
       const projectId = e.target.dataset.id;
       handler(projectId);
     });
-  }
+  },
 };
 
 export { Renderer, Binder };
