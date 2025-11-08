@@ -52,7 +52,11 @@ const Handlers = {
     clearInputs(taskTitleInput, taskDescInput);
   },
 
-  handleDeleteTodo() {},
+  handleDeleteTodo(id) {
+    activeProject.removeTodo(id);
+    Storage.saveProjects(projects);
+    Renderer.renderTodos(activeProject.getTodos());
+  },
 
   // Handle Projects
   handleAddProject() {
@@ -102,4 +106,5 @@ export function init() {
   Binder.bindAddProject(Handlers.handleAddProject);
   Binder.bindSaveProject(Handlers.handleSaveProject);
   Binder.bindCancelProject(Handlers.handleCancelProject);
+  Binder.bindDeleteTodo(Handlers.handleDeleteTodo);
 }

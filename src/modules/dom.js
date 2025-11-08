@@ -75,7 +75,7 @@ const Renderer = {
         // Create delete button
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete-todo-btn");
-        deleteBtn.dataset.id = todos.id;
+        deleteBtn.dataset.id = todo.id;
         deleteBtn.innerHTML = "🗑";
 
         // Append elements
@@ -113,7 +113,13 @@ const Binder = {
     });
   },
 
-  bindDeleteTodo(handler) {},
+  bindDeleteTodo(handler) {
+    todoList.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('delete-todo-btn')) return;
+      const todoId = e.target.dataset.id;
+      handler(todoId);
+    });
+  },
 
   // Bind Projects
   bindAddProject(handler) {
@@ -133,6 +139,8 @@ const Binder = {
       handler();
     });
   },
+
+  bindDeleteProject(handler) {}
 };
 
 export { Renderer, Binder };
