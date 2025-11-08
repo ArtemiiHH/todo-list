@@ -94,6 +94,8 @@ const Handlers = {
     Renderer.renderProjects(projects, activeProject.id);
     Renderer.renderTodos(activeProject.getTodos());
   },
+
+  handleClickProject(id) {}
 };
 
 // Initialize function
