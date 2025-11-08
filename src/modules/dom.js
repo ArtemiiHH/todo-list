@@ -121,10 +121,6 @@ const Binder = {
     });
   },
 
-  bindClickProject(handler) {
-    projectList.addEventListener("click", (e) => {});
-  },
-
   // Bind Projects
   bindAddProject(handler) {
     addNewProjectBtn.addEventListener("click", handler);
@@ -149,6 +145,13 @@ const Binder = {
       if (!e.target.classList.contains("delete-project-btn")) return;
       const projectId = e.target.dataset.id;
       handler(projectId);
+    });
+  },
+
+  bindClickProject(handler) {
+    projectList.addEventListener("click", (e) => {
+      if (e.target.classList.contains("project-box")) {
+      }
     });
   },
 };
