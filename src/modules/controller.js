@@ -87,7 +87,7 @@ const Handlers = {
     const removedProject = projects.splice(index, 1);
     if (projects.length === 0) {
       activeProject = createProject("Inbox");
-    } else if ((removedProject[0].id === activeProject.id)) {
+    } else if (removedProject[0].id === activeProject.id) {
       activeProject = projects[0];
     }
     Storage.saveProjects(projects);
@@ -95,7 +95,12 @@ const Handlers = {
     Renderer.renderTodos(activeProject.getTodos());
   },
 
-  handleClickProject(id) {}
+  handleClickProject(id) {
+    const clickedProject = projects.find((p) => p.id === id);
+    activeProject = clickedProject;
+    Renderer.renderProjects(projects, activeProject.id);
+    Renderer.renderTodos(activeProject.getTodos());
+  },
 };
 
 // Initialize function
