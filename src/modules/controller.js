@@ -121,4 +121,5 @@ export function init() {
   Binder.bindSaveProject(Handlers.handleSaveProject);
   Binder.bindCancelProject(Handlers.handleCancelProject);
   Binder.bindDeleteProject(Handlers.handleDeleteProject);
+  Binder.bindClickProject(Handlers.handleClickProject);
 }
