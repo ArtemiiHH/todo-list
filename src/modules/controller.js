@@ -82,7 +82,19 @@ const Handlers = {
     clearInputs(projectInput);
   },
 
-  handleDeleteProject() {}
+  handleDeleteProject(id) {
+    const index = projects.findIndex(p => p.id === id);
+    const removedProject = projects.splice(index, 1);
+    if (removedProject[0].id === activeProject.id) {
+      activeProject = projects[0];
+    } else if (projects.length === 0) {
+      activeProject = createProject('Inbox');
+      projects.push(activeProject);
+    }
+    Storage.saveProjects(projects);
+    Renderer.renderProjects(projects, activeProject.id);
+    Renderer.renderTodos(activeProject.getTodos());
+  },
 };
 
 // Initialize function
@@ -101,10 +113,11 @@ export function init() {
   Binder.bindAddTodo(Handlers.handleAddTodo);
   Binder.bindSaveTodo(Handlers.handleSaveTodo);
   Binder.bindCancelTodo(Handlers.handleCancelTodo);
+  Binder.bindDeleteTodo(Handlers.handleDeleteTodo);
 
   // Bind Projects
   Binder.bindAddProject(Handlers.handleAddProject);
   Binder.bindSaveProject(Handlers.handleSaveProject);
   Binder.bindCancelProject(Handlers.handleCancelProject);
-  Binder.bindDeleteTodo(Handlers.handleDeleteTodo);
+  Binder.bindDeleteProject(Handlers.handleDeleteProject);
 }

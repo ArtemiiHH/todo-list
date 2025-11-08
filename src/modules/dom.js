@@ -140,7 +140,13 @@ const Binder = {
     });
   },
 
-  bindDeleteProject(handler) {}
+  bindDeleteProject(handler) {
+    projectList.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('delete-project-btn')) return;
+      const projectId = e.target.dataset.id;
+      handler(projectId);
+    });
+  }
 };
 
 export { Renderer, Binder };
