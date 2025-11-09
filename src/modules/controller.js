@@ -20,6 +20,9 @@ let activeProject = projects[0];
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
 const projectInput = document.querySelector("#project-name-input");
+const taskDateInput = document.querySelector('#task-date-input');
+const taskPriorityInput = document.querySelector('#task-priority-input');
+
 const contentProjectTitle = document.querySelector(".project-title");
 
 // Clear input function
