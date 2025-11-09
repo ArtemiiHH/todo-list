@@ -39,7 +39,7 @@ const Handlers = {
   },
 
   handleSaveTodo() {
-    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value);
+    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value, taskDateInput.value);
 
     activeProject.addTodo(newTodo);
     Renderer.renderTodos(activeProject.getTodos());
@@ -47,12 +47,12 @@ const Handlers = {
     Storage.saveProjects(projects);
 
     TodoModal.close();
-    clearInputs(taskTitleInput, taskDescInput);
+    clearInputs(taskTitleInput, taskDescInput, taskDateInput);
   },
 
   handleCancelTodo() {
     TodoModal.close();
-    clearInputs(taskTitleInput, taskDescInput);
+    clearInputs(taskTitleInput, taskDescInput, taskDateInput);
   },
 
   handleDeleteTodo(id) {

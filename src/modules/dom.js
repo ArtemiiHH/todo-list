@@ -66,14 +66,23 @@ const Renderer = {
         const todoBox = document.createElement("div");
         todoBox.classList.add("todo-box");
         // Text + desc wrap container
-        const textWrapContainer = document.createElement('div');
-        textWrapContainer.classList.add('text-wrap-container');
+        const textWrapContainer = document.createElement("div");
+        textWrapContainer.classList.add("text-wrap-container");
         // Create todos title
         const title = document.createElement("h3");
         title.textContent = todo.title || "Untitled";
         // Create todos description
         const description = document.createElement("p");
         description.textContent = todo.description || "No description";
+        // Date wrap container
+        const dateWrapContainer = document.createElement("div");
+        textWrapContainer.classList.add("date-wrap-container");
+        // Create date title
+        const dateTitle = document.createElement("h3");
+        dateTitle.textContent = "Date due:";
+        // Create date
+        const date = document.createElement("p");
+        date.textContent = todo.dueDate || "No date selected";
 
         // Create delete button
         const deleteBtn = document.createElement("button");
@@ -83,7 +92,8 @@ const Renderer = {
 
         // Append elements
         textWrapContainer.append(title, description);
-        todoBox.append(textWrapContainer, deleteBtn);
+        dateWrapContainer.append(dateTitle, date);
+        todoBox.append(textWrapContainer, dateWrapContainer, deleteBtn);
         todoList.appendChild(todoBox);
       }
     }
