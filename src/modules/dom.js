@@ -23,7 +23,11 @@ const helperFunctions = {
 
   createElement() {},
 
-  formatDate() {},
+  formatDate(rawDate) {
+    const date = new Date(rawDate);
+    const formattedDate = date.toLocaleDateString('en-US');
+    return formattedDate;
+  },
 };
 
 // Render functions group
@@ -82,7 +86,7 @@ const Renderer = {
         dateTitle.textContent = "Date due:";
         // Create date
         const date = document.createElement("p");
-        date.textContent = todo.dueDate || "No date selected";
+        date.textContent = helperFunctions.formatDate(todo.dueDate) || "No date selected";
 
         // Create delete button
         const deleteBtn = document.createElement("button");
