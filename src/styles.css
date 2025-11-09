@@ -145,6 +145,10 @@ h3 {
   border-radius: 10px;
 }
 
+.active {
+  background-color: red;
+}
+
 /* Todo Modal */
 /* Modal background (Overlay) */
 #todo-modal {
