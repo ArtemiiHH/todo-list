@@ -67,6 +67,7 @@ const Handlers = {
     const newProject = createProject(projectInput.value);
     projects.push(newProject);
     activeProject = newProject;
+    contentProjectTitle.textContent = activeProject.title;
 
     Storage.saveProjects(projects);
 
@@ -90,6 +91,7 @@ const Handlers = {
     } else if (removedProject[0].id === activeProject.id) {
       activeProject = projects[0];
     }
+    contentProjectTitle.textContent = activeProject.title;
     Storage.saveProjects(projects);
     Renderer.renderProjects(projects, activeProject.id);
     Renderer.renderTodos(activeProject.getTodos());
@@ -112,6 +114,7 @@ export function init() {
     projects.push(defaultProject);
     activeProject = defaultProject;
   }
+  contentProjectTitle.textContent = activeProject.title;
 
   // Render Default project
   Renderer.renderProjects(projects, activeProject.id);
