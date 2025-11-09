@@ -98,6 +98,8 @@ const Handlers = {
     const clickedProject = projects.find((p) => p.id === id);
     if (!clickedProject) return;
     activeProject = clickedProject;
+    const contentProjectTitle = document.querySelector('.project-title');
+    contentProjectTitle.textContent = activeProject.title;
     Renderer.renderProjects(projects, activeProject.id);
     Renderer.renderTodos(activeProject.getTodos());
   },
