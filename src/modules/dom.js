@@ -46,7 +46,7 @@ const Renderer = {
       const deleteBtn = document.createElement("button");
       deleteBtn.classList.add("delete-project-btn");
       deleteBtn.dataset.id = project.id;
-      deleteBtn.innerHTML = "🗑";
+      deleteBtn.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
       // Append elements
       projectBox.append(title, deleteBtn);
@@ -76,7 +76,7 @@ const Renderer = {
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete-todo-btn");
         deleteBtn.dataset.id = todo.id;
-        deleteBtn.innerHTML = "🗑";
+        deleteBtn.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
         // Append elements
         todoBox.append(title, description, deleteBtn);
@@ -115,9 +115,9 @@ const Binder = {
 
   bindDeleteTodo(handler) {
     todoList.addEventListener("click", (e) => {
-      if (!e.target.classList.contains("delete-todo-btn")) return;
-      const todoId = e.target.dataset.id;
-      handler(todoId);
+      const deleteBtn = e.target.closest(".delete-todo-btn");
+      if (!deleteBtn) return;
+      handler(deleteBtn.dataset.id);
     });
   },
 
@@ -142,9 +142,9 @@ const Binder = {
 
   bindDeleteProject(handler) {
     projectList.addEventListener("click", (e) => {
-      if (!e.target.classList.contains("delete-project-btn")) return;
-      const projectId = e.target.dataset.id;
-      handler(projectId);
+      const deleteBtn = e.target.closest(".delete-project-btn");
+      if (!deleteBtn) return;
+      handler(deleteBtn.dataset.id);
     });
   },
 
