@@ -190,7 +190,20 @@ h2 {
 .task-input {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+}
+
+.date-priority {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.priority-input,
+.date-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 /* Open modal */
@@ -214,7 +227,7 @@ h2 {
   align-items: center;
 }
 
-/* Modal box */
+/* Project modal box */
 .project-modal-form {
   display: flex;
   flex-direction: column;
@@ -231,19 +244,24 @@ h2 {
   display: flex;
 }
 
-input {
+/* Both modal inputs */
+input,
+select {
   border-radius: 10px;
   border: solid 2px gray;
   height: 35px;
   width: auto;
   font-size: 1.2rem;
   padding-left: 10px;
+  padding-right: 10px;
+  color: black;
 }
 
 input::placeholder {
-  opacity: 0.4;
+  color: black;
 }
 
+/* Both modal labels */
 label {
   font-size: 1.5rem;
   font-weight: 600;
