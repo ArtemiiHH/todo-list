@@ -7,13 +7,11 @@ import { createProject } from "./project";
 // Projects
 // Load projects from storage
 let projects = Storage.loadProjects().map((p) => createProject(p.title, p.id));
-
 // If no projects, create default
 if (projects.length === 0) {
   const defaultProject = createProject("Inbox");
   projects.push(defaultProject);
 }
-
 let activeProject = projects[0];
 
 // Assign inputs
