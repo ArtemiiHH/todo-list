@@ -1,7 +1,6 @@
 // DOM handler
 
 // Cache DOM elements once
-const sidebar = document.getElementById("sidebar");
 const todoList = document.querySelector(".todo-list");
 const projectList = document.querySelector(".project-list");
 const addTodoBtn = document.querySelector(".add-todo-btn");
@@ -149,18 +148,17 @@ const Binder = {
     });
   },
 
-bindClickProject(handler) {
-  projectList.addEventListener("click", (e) => {
-    // ignore delete button
-    if (e.target.classList.contains("delete-project-btn")) return;
+  bindClickProject(handler) {
+    projectList.addEventListener("click", (e) => {
+      // ignore delete button
+      if (e.target.classList.contains("delete-project-btn")) return;
 
-    const box = e.target.closest(".project-box");
-    if (!box) return;
+      const box = e.target.closest(".project-box");
+      if (!box) return;
 
-    handler(box.dataset.id);
-  });
-},
-
+      handler(box.dataset.id);
+    });
+  },
 };
 
 export { Renderer, Binder };

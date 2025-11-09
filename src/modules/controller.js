@@ -16,7 +16,6 @@ if (projects.length === 0) {
 
 let activeProject = projects[0];
 
-const projectList = document.querySelector(".project-list");
 // Assign inputs
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
