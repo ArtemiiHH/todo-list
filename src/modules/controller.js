@@ -20,6 +20,7 @@ let activeProject = projects[0];
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
 const projectInput = document.querySelector("#project-name-input");
+const contentProjectTitle = document.querySelector(".project-title");
 
 // Clear input function
 function clearInputs(...inputs) {
@@ -98,7 +99,6 @@ const Handlers = {
     const clickedProject = projects.find((p) => p.id === id);
     if (!clickedProject) return;
     activeProject = clickedProject;
-    const contentProjectTitle = document.querySelector('.project-title');
     contentProjectTitle.textContent = activeProject.title;
     Renderer.renderProjects(projects, activeProject.id);
     Renderer.renderTodos(activeProject.getTodos());
