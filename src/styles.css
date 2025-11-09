@@ -119,6 +119,8 @@ h2 {
 
 /* Each todo elements box */
 .todo-box {
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   box-shadow: var(--box-shadow);
   border-radius: 10px;
