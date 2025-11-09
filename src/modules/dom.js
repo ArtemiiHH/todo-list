@@ -37,6 +37,7 @@ const Renderer = {
       // Create projects box
       const projectBox = document.createElement("div");
       projectBox.classList.add("project-box");
+      projectBox.dataset.id = project.id;
       if (project.id === activeProjectId) projectBox.classList.add("active");
       // Create projects title
       const title = document.createElement("h3");
@@ -148,12 +149,18 @@ const Binder = {
     });
   },
 
-  bindClickProject(handler) {
-    projectList.addEventListener("click", (e) => {
-      if (e.target.classList.contains("project-box")) {
-      }
-    });
-  },
+bindClickProject(handler) {
+  projectList.addEventListener("click", (e) => {
+    // ignore delete button
+    if (e.target.classList.contains("delete-project-btn")) return;
+
+    const box = e.target.closest(".project-box");
+    if (!box) return;
+
+    handler(box.dataset.id);
+  });
+},
+
 };
 
 export { Renderer, Binder };

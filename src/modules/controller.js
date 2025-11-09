@@ -96,7 +96,8 @@ const Handlers = {
   },
 
   handleClickProject(id) {
-    const clickedProject = projects.find((p) => p.id === id);
+    const clickedProject = (projects.find((p) => p.id === id));
+    if (!clickedProject) return;
     activeProject = clickedProject;
     Renderer.renderProjects(projects, activeProject.id);
     Renderer.renderTodos(activeProject.getTodos());
