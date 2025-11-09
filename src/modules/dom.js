@@ -65,6 +65,9 @@ const Renderer = {
         // Create todos box
         const todoBox = document.createElement("div");
         todoBox.classList.add("todo-box");
+        // Text + desc wrap container
+        const textWrapContainer = document.createElement('div');
+        textWrapContainer.classList.add('text-wrap-container');
         // Create todos title
         const title = document.createElement("h3");
         title.textContent = todo.title || "Untitled";
@@ -79,7 +82,8 @@ const Renderer = {
         deleteBtn.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
         // Append elements
-        todoBox.append(title, description, deleteBtn);
+        textWrapContainer.append(title, description);
+        todoBox.append(textWrapContainer, deleteBtn);
         todoList.appendChild(todoBox);
       }
     }
