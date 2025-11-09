@@ -86,7 +86,7 @@ const Renderer = {
   },
 
   renderEmpty() {
-    todoList.innerHTML = "<p>No todos yet</p>";
+    todoList.innerHTML = "<p>No tasks added</p>";
   },
 };
 
