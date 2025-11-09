@@ -22,7 +22,7 @@
       <main id="content">
         <h1 class="project-title">Inbox</h1>
         <hr />
-        <br>
+        <br />
         <div class="todo-list"></div>
         <button class="add-todo-btn">+ Add a task</button>
       </main>
@@ -32,27 +32,37 @@
     <div id="todo-modal">
       <!-- Modal box -->
       <form class="modal-form">
-        <label for="task-title-input">Title</label>
-        <input type="text" id="task-title-input" placeholder="Task name" />
+        <div class="task-input">
+          <label for="task-title-input">Task name</label>
+          <input type="text" id="task-title-input" placeholder="ex. Go shopping" />
+        </div>
 
-        <label for="task-description-input">Description</label>
-        <input
-          type="text"
-          id="task-description-input"
-          placeholder="Description"
-        />
-        <button class="save-btn">Add task</button>
-        <button class="cancel-btn">Cancel</button>
+        <div class="task-input">
+          <label for="task-description-input">Description</label>
+          <input
+            type="text"
+            id="task-description-input"
+            placeholder="Details..."
+          />
+        </div>
+        <div class="modal-buttons">
+          <button class="save-btn">Add task</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
       </form>
     </div>
 
     <!-- Project Modal -->
     <div id="project-modal">
       <form class="project-modal-form">
-        <label for="project-name-input">New Project Name</label>
-        <input type="text" id="project-name-input" placeholder="Name" />
-        <button class="save-project-btn">Add project</button>
-        <button class="cancel-project-btn">Cancel</button>
+        <label for="project-name-input">New project name</label>
+        <input type="text" id="project-name-input" placeholder="ex. Project 1" />
+
+        <!-- Project modal buttons -->
+        <div class="modal-buttons">
+          <button class="save-project-btn">Add project</button>
+          <button class="cancel-project-btn">Cancel</button>
+        </div>
       </form>
     </div>
   </body>

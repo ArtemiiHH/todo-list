@@ -179,9 +179,18 @@ h2 {
 .modal-form {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 500px;
+  border-radius: 10px;
+  gap: 30px;
+  padding: 30px;
+  height: auto;
+  width: 300px;
   background-color: white;
+}
+
+.task-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Open modal */
@@ -209,12 +218,52 @@ h2 {
 .project-modal-form {
   display: flex;
   flex-direction: column;
-  height: 100px;
-  width: 200px;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 30px;
+  height: auto;
+  width: 300px;
   background-color: white;
 }
 
 /* Open modal */
 #project-modal.open {
   display: flex;
+}
+
+input {
+  border-radius: 10px;
+  border: solid 2px gray;
+  height: 35px;
+  width: auto;
+  font-size: 1.2rem;
+  padding-left: 10px;
+}
+
+input::placeholder {
+  opacity: 0.4;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Project modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  background-color: rgb(89, 89, 89);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 8px 35px;
+  font-size: 1.1rem;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.8;
 }
