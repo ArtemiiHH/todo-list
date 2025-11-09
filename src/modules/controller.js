@@ -6,7 +6,9 @@ import { createProject } from "./project";
 
 // Projects
 // Load projects from storage
-let projects = Storage.loadProjects().map((p) => createProject(p.title, p.id));
+let projects = Storage.loadProjects().map((p) =>
+  createProject(p.title, p.id, p.todos)
+);
 // If no projects, create default
 if (projects.length === 0) {
   const defaultProject = createProject("Inbox");
@@ -93,7 +95,7 @@ const Handlers = {
   },
 
   handleClickProject(id) {
-    const clickedProject = (projects.find((p) => p.id === id));
+    const clickedProject = projects.find((p) => p.id === id);
     if (!clickedProject) return;
     activeProject = clickedProject;
     Renderer.renderProjects(projects, activeProject.id);
