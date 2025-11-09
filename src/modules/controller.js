@@ -113,6 +113,8 @@ export function init() {
 
   // Render Default project
   Renderer.renderProjects(projects, activeProject.id);
+  // Render Default todos
+  Renderer.renderTodos(activeProject.getTodos());
 
   // Bind the handlers to Binders in DOM
   // Bind Todos
