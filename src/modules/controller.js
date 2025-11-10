@@ -20,8 +20,8 @@ let activeProject = projects[0];
 const taskTitleInput = document.querySelector("#task-title-input");
 const taskDescInput = document.querySelector("#task-description-input");
 const projectInput = document.querySelector("#project-name-input");
-const taskDateInput = document.querySelector('#task-date-input');
-const taskPriorityInput = document.querySelector('#task-priority-input');
+const taskDateInput = document.querySelector("#task-date-input");
+const taskPriorityInput = document.querySelector("#task-priority-input");
 
 const contentProjectTitle = document.querySelector(".project-title");
 
@@ -39,7 +39,12 @@ const Handlers = {
   },
 
   handleSaveTodo() {
-    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value, taskDateInput.value, taskPriorityInput.value);
+    const newTodo = createTodo(
+      taskTitleInput.value,
+      taskDescInput.value,
+      taskDateInput.value,
+      taskPriorityInput.value
+    );
 
     activeProject.addTodo(newTodo);
     Renderer.renderTodos(activeProject.getTodos());
@@ -57,6 +62,16 @@ const Handlers = {
 
   handleDeleteTodo(id) {
     activeProject.removeTodo(id);
+    Storage.saveProjects(projects);
+    Renderer.renderTodos(activeProject.getTodos());
+  },
+
+  handleToggleTodoCompleted(id) {
+    const todo = activeProject.getTodos().find((t) => t.id === id);
+    if (!todo) return;
+
+    todo.completed = !todo.completed;
+
     Storage.saveProjects(projects);
     Renderer.renderTodos(activeProject.getTodos());
   },
@@ -130,6 +145,7 @@ export function init() {
   Binder.bindSaveTodo(Handlers.handleSaveTodo);
   Binder.bindCancelTodo(Handlers.handleCancelTodo);
   Binder.bindDeleteTodo(Handlers.handleDeleteTodo);
+  Binder.bindToggleTodoCompleted(Handlers.handleToggleTodoCompleted);
 
   // Bind Projects
   Binder.bindAddProject(Handlers.handleAddProject);

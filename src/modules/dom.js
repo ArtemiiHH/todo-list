@@ -25,7 +25,7 @@ const helperFunctions = {
 
   formatDate(rawDate) {
     const date = new Date(rawDate);
-    const formattedDate = date.toLocaleDateString('en-US');
+    const formattedDate = date.toLocaleDateString("en-US");
     return formattedDate;
   },
 };
@@ -66,10 +66,12 @@ const Renderer = {
     } else {
       // Loop thru todos and create element
       for (let todo of todos) {
-
         // Create todos box
         const todoBox = document.createElement("div");
         todoBox.classList.add("todo-box");
+        if (todo.completed) {
+          todoBox.classList.add("completed");
+        }
 
         // Text + desc wrap container
         const textWrapContainer = document.createElement("div");
@@ -89,22 +91,25 @@ const Renderer = {
         dateTitle.textContent = "Date due:";
         // Create date
         const date = document.createElement("p");
-        date.textContent = helperFunctions.formatDate(todo.dueDate) || "No date selected";
+        date.textContent =
+          helperFunctions.formatDate(todo.dueDate) || "No date selected";
 
         // Priority wrap container
-        const priorityWrapContainer = document.createElement('div');
-        priorityWrapContainer.classList.add('priority-wrap-container');
+        const priorityWrapContainer = document.createElement("div");
+        priorityWrapContainer.classList.add("priority-wrap-container");
         // Create priority title
-        const priorityTitle = document.createElement('h3');
-        priorityTitle.textContent = 'Priority' || 'Not selected';
+        const priorityTitle = document.createElement("h3");
+        priorityTitle.textContent = "Priority" || "Not selected";
         // Create priority
-        const priority = document.createElement('p');
+        const priority = document.createElement("p");
         priority.textContent = todo.priority;
 
         // Checkbox
-        const checkbox = document.createElement('input');
-        checkbox.setAttribute('type', 'checkbox');
-        checkbox.classList.add('checkbox');
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.classList.add("todo-checkbox");
+        checkbox.dataset.id = todo.id;
+        checkbox.checked = todo.completed;
 
         // Create delete button
         const deleteBtn = document.createElement("button");
@@ -116,7 +121,13 @@ const Renderer = {
         textWrapContainer.append(title, description);
         dateWrapContainer.append(dateTitle, date);
         priorityWrapContainer.append(priorityTitle, priority);
-        todoBox.append(checkbox, textWrapContainer, dateWrapContainer, priorityWrapContainer, deleteBtn);
+        todoBox.append(
+          checkbox,
+          textWrapContainer,
+          dateWrapContainer,
+          priorityWrapContainer,
+          deleteBtn
+        );
         todoList.appendChild(todoBox);
       }
     }
@@ -155,6 +166,14 @@ const Binder = {
       const deleteBtn = e.target.closest(".delete-todo-btn");
       if (!deleteBtn) return;
       handler(deleteBtn.dataset.id);
+    });
+  },
+
+  bindToggleTodoCompleted(handler) {
+    todoList.addEventListener("change", (e) => {
+      const checkbox = e.target.closest(".todo-checkbox");
+      if (!checkbox) return;
+      handler(checkbox.dataset.id);
     });
   },
 

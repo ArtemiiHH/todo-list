@@ -130,6 +130,16 @@ h2 {
   margin-bottom: 20px;
 }
 
+.todo-box.completed h3,
+.todo-box.completed p {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-box.completed {
+  background-color: #e4ffe4;
+}
+
 .todo-box h3,
 .todo-box p {
   margin: 0;
