@@ -101,6 +101,11 @@ const Renderer = {
         const priority = document.createElement('p');
         priority.textContent = todo.priority;
 
+        // Checkbox
+        const checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
+        checkbox.classList.add('checkbox');
+
         // Create delete button
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete-todo-btn");
@@ -111,7 +116,7 @@ const Renderer = {
         textWrapContainer.append(title, description);
         dateWrapContainer.append(dateTitle, date);
         priorityWrapContainer.append(priorityTitle, priority);
-        todoBox.append(textWrapContainer, dateWrapContainer, priorityWrapContainer, deleteBtn);
+        todoBox.append(checkbox, textWrapContainer, dateWrapContainer, priorityWrapContainer, deleteBtn);
         todoList.appendChild(todoBox);
       }
     }
