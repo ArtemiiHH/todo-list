@@ -268,7 +268,7 @@ select {
 }
 
 input::placeholder {
-  color: black;
+  opacity: 0.5;
 }
 
 /* Both modal labels */
