@@ -39,7 +39,7 @@ const Handlers = {
   },
 
   handleSaveTodo() {
-    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value, taskDateInput.value);
+    const newTodo = createTodo(taskTitleInput.value, taskDescInput.value, taskDateInput.value, taskPriorityInput.value);
 
     activeProject.addTodo(newTodo);
     Renderer.renderTodos(activeProject.getTodos());

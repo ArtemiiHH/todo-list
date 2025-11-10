@@ -66,9 +66,11 @@ const Renderer = {
     } else {
       // Loop thru todos and create element
       for (let todo of todos) {
+
         // Create todos box
         const todoBox = document.createElement("div");
         todoBox.classList.add("todo-box");
+
         // Text + desc wrap container
         const textWrapContainer = document.createElement("div");
         textWrapContainer.classList.add("text-wrap-container");
@@ -78,6 +80,7 @@ const Renderer = {
         // Create todos description
         const description = document.createElement("p");
         description.textContent = todo.description || "No description";
+
         // Date wrap container
         const dateWrapContainer = document.createElement("div");
         textWrapContainer.classList.add("date-wrap-container");
@@ -88,6 +91,16 @@ const Renderer = {
         const date = document.createElement("p");
         date.textContent = helperFunctions.formatDate(todo.dueDate) || "No date selected";
 
+        // Priority wrap container
+        const priorityWrapContainer = document.createElement('div');
+        priorityWrapContainer.classList.add('priority-wrap-container');
+        // Create priority title
+        const priorityTitle = document.createElement('h3');
+        priorityTitle.textContent = 'Priority' || 'Not selected';
+        // Create priority
+        const priority = document.createElement('p');
+        priority.textContent = todo.priority;
+
         // Create delete button
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete-todo-btn");
@@ -97,7 +110,8 @@ const Renderer = {
         // Append elements
         textWrapContainer.append(title, description);
         dateWrapContainer.append(dateTitle, date);
-        todoBox.append(textWrapContainer, dateWrapContainer, deleteBtn);
+        priorityWrapContainer.append(priorityTitle, priority);
+        todoBox.append(textWrapContainer, dateWrapContainer, priorityWrapContainer, deleteBtn);
         todoList.appendChild(todoBox);
       }
     }
